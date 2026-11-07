@@ -1,0 +1,10 @@
+{
+  "//": "COPY to .claude/settings.local.json (gitignored) and set the absolute path to your READ-ONLY godot-knowledge checkout.",
+  "//reachability": "additionalDirectories makes the path reachable (read+edit under current perms) — it is NOT read-only by itself.",
+  "//boundary": "The real read-only boundary is OS-level: create the checkout read-only (git clone ... && chmod -R a-w). The Edit deny below is harness-level risk reduction only and does NOT stop Bash writes.",
+  "//conditionA": "Condition A (baseline) must run WITHOUT this path attached at all — knowledge absent from disk.",
+  "permissions": {
+    "additionalDirectories": ["/abs/path/to/godot-knowledge-ro"],
+    "deny": ["Edit(//abs/path/to/godot-knowledge-ro/**)"]
+  }
+}
