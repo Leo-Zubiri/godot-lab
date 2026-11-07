@@ -1,0 +1,13 @@
+# Example GUT test (requires the GUT addon at addons/gut/ — see fixtures/godot/README.md).
+# Rename to test_smoke.gd once GUT is installed. Shown as .example so it is not mistaken for runnable.
+#
+# extends GutTest
+#
+# func test_timer_oneshot_runs_once() -> void:
+#     # Instantiate the generated script / scene under test, drive it headless, and assert the
+#     # behavior the task's acceptance criteria require (e.g. callback fired exactly once).
+#     assert_true(true, "replace with a real assertion tied to the task's acceptance criteria")
+#
+# Run headless (once GUT is installed), e.g.:
+#   $GODOT_BIN --headless -s addons/gut/gut_cmdln.gd -gdir=res://test -gexit
+# Gate on PARSED output (GUT reports pass/fail counts), not the exit code alone.

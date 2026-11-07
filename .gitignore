@@ -10,6 +10,9 @@ secrets/
 # --- Godot fixture caches (per official Godot .gitignore) ---
 fixtures/**/.godot/
 fixtures/**/*.translation
+# Runtime-generated scripts under test (the wrapper copies the output here per run)
+fixtures/godot/scripts/_under_test.gd
+fixtures/godot/scripts/*-run-*.gd
 
 # --- Run artifacts: large/raw transcripts are kept locally, not committed ---
 # Commit the curated run record (config.yaml, scores.yaml, validation summaries);

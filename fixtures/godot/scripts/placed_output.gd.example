@@ -1,0 +1,16 @@
+# This is a PLACEHOLDER showing where a run's generated GDScript is placed for validation.
+# The harness copies a run's output script to fixtures/godot/scripts/<run-id>.gd (gitignored per run),
+# then runs:  $GODOT_BIN --headless --script res://scripts/<run-id>.gd --check-only
+#
+# A trivially-valid example of what a parseable Godot 4.7 script looks like (for pipeline smoke-testing):
+#
+# extends Node
+#
+# func _ready() -> void:
+#     var timer := get_tree().create_timer(1.0)
+#     timer.timeout.connect(_on_timeout, CONNECT_ONE_SHOT)
+#
+# func _on_timeout() -> void:
+#     print("done once")
+#
+# NOTE: this .example file is documentation only; real generated scripts are placed at run time.

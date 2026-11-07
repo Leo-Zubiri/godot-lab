@@ -1,0 +1,14 @@
+; godot-lab minimal validation fixture — Godot 4.7.2
+; Intentionally minimal: enough to open headless and run GDScript parse/GUT checks.
+; (Godot rewrites this file when opened in the editor; keep it small.)
+
+config_version=5
+
+[application]
+
+config/name="godot-lab-fixture"
+config/features=PackedStringArray("4.7")
+
+[gut]
+
+; GUT settings are added once the addon is installed (addons/gut/). See fixtures/godot/README.md.
