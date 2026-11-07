@@ -1,0 +1,14 @@
+blind_id: out-09
+condition: B
+trial: 3
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+technical_correctness: 2
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 2
+clarity: 3
+practical_validity: 3
+justification: "The script is valid Godot 4 code: Timer.new with one_shot and wait_time, add_child, timeout.connect with CONNECT_ONE_SHOT, then start(), so it calls _on_timeout() once after about 1 second. The lifecycle notes on _ready() and frame-based timing are right. One claim is wrong: the Timer is not freed when the node merely leaves the tree. It is freed only if the node itself is freed, and otherwise it just stops counting while out of the tree. Using both one_shot and CONNECT_ONE_SHOT is redundant but harmless."

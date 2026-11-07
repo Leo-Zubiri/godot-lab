@@ -1,0 +1,14 @@
+blind_id: out-04
+condition: A
+trial: 3
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 2
+clarity: 3
+practical_validity: 3
+justification: "The script is correct: get_tree().create_timer(1.0) returns a SceneTreeTimer, and timeout.connect(_on_timeout, CONNECT_ONE_SHOT) fires once after about 1s. One lifecycle claim is shaky: it says Godot drops the connection automatically if the node is freed. That is true for Callables bound to Object methods (the signal removes connections to freed objects), but the wording overstates it a little. The 'idle time by default' claim is accurate because process_always and ignore_time_scale default to true and false. A minor nit is that CONNECT_ONE_SHOT is redundant because the timer only emits once."

@@ -1,0 +1,14 @@
+blind_id: out-08
+condition: B
+trial: 1
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 2
+practical_validity: 3
+justification: "Timer created in _ready with one_shot=true, wait_time=1.0, timeout connected to _on_timeout, added as a child, then started. This fires exactly once about 1s later, and the lifecycle explanation is accurate, including the note about freeing the node. All APIs are real and valid in Godot 4.x. Minor clarity issue: the answer cites note names and caveats that don't help explain the code."

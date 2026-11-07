@@ -1,0 +1,14 @@
+blind_id: out-03
+condition: B
+trial: 2
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "The script is correct Godot 4 GDScript. `get_tree().create_timer(1.0).timeout.connect(_on_timeout, CONNECT_ONE_SHOT)` is valid, and the timer fires once after 1 s, so `_on_timeout()` is called exactly once. The lifecycle notes are accurate: `_ready` runs once after the node and its children are in the tree, and the timer is advanced by the SceneTree. The signal-driven callback is asynchronous, and the early-free note is correctly hedged. `CONNECT_ONE_SHOT` is redundant for a one-time timer but harmless."

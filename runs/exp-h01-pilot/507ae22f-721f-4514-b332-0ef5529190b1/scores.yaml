@@ -1,0 +1,14 @@
+blind_id: out-07
+condition: Aprime
+trial: 3
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "get_tree().create_timer(1.0).timeout.connect(_on_timeout, CONNECT_ONE_SHOT) is valid Godot 4 GDScript. It fires once after about 1 second, and the lifecycle notes are accurate: _ready runs after the children are ready, the timer fires on a process frame, and the SceneTreeTimer is freed after it fires. The one small quibble is that the timer is not bound to the node, so freeing the node doesn't disconnect a Callable by itself. Godot does auto-disconnect when the callable's target object is freed, so the claim holds."

@@ -1,0 +1,14 @@
+blind_id: out-01
+condition: Aprime
+trial: 2
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "The script uses valid Godot 4 API. It creates a one_shot Timer with wait_time 1.0, connects timeout to _on_timeout with CONNECT_ONE_SHOT, calls add_child before start(), and so fires exactly once. The lifecycle notes (_ready once, per-frame ticking, timeout emission, freed with the parent) are accurate. The knowledge-base preamble and the 'not run' remark were disregarded."

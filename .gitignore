@@ -18,6 +18,8 @@ fixtures/godot/scripts/*-run-*.gd
 # Commit the curated run record (config.yaml, scores.yaml, validation summaries);
 # keep bulky raw transcripts out of git. Adjust per experiment if you want them tracked.
 runs/**/*.jsonl
+runs/**/*.err
+runs/**/eval_raw/
 runs/**/raw/
 
 # --- OS / editor noise ---

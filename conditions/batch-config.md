@@ -12,7 +12,7 @@ godot_version: "4.7.2-stable"      # pinned; record build hash per run
 language: "gdscript"               # C# deferred (separate, justified phase)
 
 # --- Generation (model under test) ---
-gen_model_id: "<PIN EXACT FULL ID — not an alias>"   # e.g. claude-opus-5-5 ; fill before first run
+gen_model_id: "claude-haiku-5-5"    # PILOT run: cheapest model for pipeline validation (switch to target model for real benchmarks)
 gen_effort: "high"                  # pinned; fast mode OFF
 sampling: "uncontrolled"            # temperature/top-p/seed NOT settable in Claude Code → repeats + variance
 fallback_model: "unset"
@@ -30,7 +30,7 @@ session_isolation:                  # disable context/memory surprises
 
 # --- Knowledge access (the independent variable) ---
 knowledge_repo: "Leo-Zubiri/godot-knowledge"
-knowledge_commit_sha: "<record per batch — pin a checkout>"
+knowledge_commit_sha: "50cc03ab79ad448586f6dc0377202f3b2393c742"   # v0.1.0 (read-only checkout)
 knowledge_access:
   A: "absent from filesystem"
   A_prime: "empty dir attached (record empty-dir detection)"
@@ -43,7 +43,7 @@ acceptance_tests: "defined BEFORE running any condition; identical harness acros
 failure_types_recorded: [parse, test, runtime, requirement]   # independently
 
 # --- Evaluation ---
-eval_model_id: "<PIN EXACT FULL ID — DIFFERENT from gen_model_id>"   # fill before first run
+eval_model_id: "claude-sonnet-5-5"  # DIFFERENT from generator (claude-haiku-5-5), to curb self-agreement
 eval_blind: true                    # randomized output IDs, shuffled order, condition hidden
 eval_no_rewrite: true               # never rewrite/normalize outputs; score correctness+requirements, not verbosity/style
 rubric_version: "<set when rubric frozen in P4>"
