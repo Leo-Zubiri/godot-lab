@@ -1,0 +1,24 @@
+# --- Secrets / local config (NEVER commit) ---
+.env
+*.key
+*.token
+secrets/
+# Local Claude Code settings that may hold machine-specific paths/keys
+.claude/settings.local.json
+.mcp.json
+
+# --- Godot fixture caches (per official Godot .gitignore) ---
+fixtures/**/.godot/
+fixtures/**/*.translation
+
+# --- Run artifacts: large/raw transcripts are kept locally, not committed ---
+# Commit the curated run record (config.yaml, scores.yaml, validation summaries);
+# keep bulky raw transcripts out of git. Adjust per experiment if you want them tracked.
+runs/**/*.jsonl
+runs/**/raw/
+
+# --- OS / editor noise ---
+.DS_Store
+*~
+.idea/
+.vscode/
