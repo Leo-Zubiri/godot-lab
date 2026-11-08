@@ -5,9 +5,7 @@ frozen: 2026-11-08
 conditions: [A, A_prime, B]           # A baseline (no knowledge), A' placebo (empty dir), B read-only knowledge
 trials_per_condition: 5               # EXPLORATORY; N=5 cannot establish statistical significance
 generation:
-  model_id: claude-haiku-5-5          # NOTE: decision authorized generator = Sonnet; set gen model at matrix time.
-  # ^ left as a placeholder marker; h06 definition.md pins gen=claude-sonnet-5-5 (resolved version recorded per run).
-  gen_model_id: claude-sonnet-5-5
+  gen_model_id: claude-sonnet-5-5     # authorized generator; exact resolved version recorded per run (system/init)
   effort: high
   web_access: off
   randomize_order: true
