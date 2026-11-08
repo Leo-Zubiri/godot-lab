@@ -1,0 +1,18 @@
+{
+  "run_id": "d3236b80-36d7-5df0-ac29-c51ba34cb336",
+  "condition": "B",
+  "trial": 4,
+  "order_index": 10,
+  "gen_model_id": "claude-sonnet-5-5",
+  "effort": "high",
+  "web_access": "off",
+  "isolation": "bwrap-ro-bind",
+  "sandbox": "scripts/h06_sandbox.sh",
+  "knowledge_mount": "/knowledge (ro, pinned)",
+  "in_sandbox_knowledge_path": "/knowledge",
+  "knowledge_host_path": "/home/zub/Documents/GODOT/godot-knowledge-ro-h06",
+  "knowledge_pin": "91250e6b2bd9e3966e7b22be94dea9bc2c263fae",
+  "max_budget_usd": 5.0,
+  "timeout_s": 600,
+  "preserve_attempt": true
+}

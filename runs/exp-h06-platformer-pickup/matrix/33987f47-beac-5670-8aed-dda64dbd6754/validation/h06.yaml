@@ -1,0 +1,12 @@
+candidate_verdict: PASS
+reason: "all candidate tests passed"
+tests: 6
+failures: 0
+skipped: 0
+risky: 0
+pending: 0
+crash: 0
+harness_err: 0
+cand_err: 0
+godot_rc: 0
+harness_sanity_verdict: PASS

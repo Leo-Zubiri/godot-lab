@@ -1,0 +1,8 @@
+{
+  "blind_id": "q-015",
+  "sent_to_evaluator": false,
+  "leakage_hits": [],
+  "rubric": "rubrics/godot-eval-v0_1.md",
+  "evaluator_model_id": "claude-opus-5-5",
+  "note": "meta.json is a LOCAL record and is NEVER included in payload.json / sent to the evaluator"
+}

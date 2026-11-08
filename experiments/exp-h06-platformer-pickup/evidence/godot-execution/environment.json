@@ -1,0 +1,8 @@
+{
+  "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "godot_bin": "/home/zub/.local/bin/godot-mono",
+  "gut_version": "9.6.1",
+  "fixture": "fixtures/h06",
+  "harness": "scripts/run_h06_tests.sh",
+  "verdict_rules": "PASS requires failures=0, skipped=0, risky=0, pending=0, no crash, no harness error, tests>0"
+}

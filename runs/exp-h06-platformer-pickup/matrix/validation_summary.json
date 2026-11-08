@@ -1,0 +1,62 @@
+{
+  "0bd36f68-7924-5975-bc4c-dca1d87e2df2": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "24d62fcb-f24b-5838-873d-78d79a2a12c8": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "307b6749-187d-51cd-a6d3-a09ee4d25845": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "33987f47-beac-5670-8aed-dda64dbd6754": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "3d270d38-47da-55c6-a4d9-501c24115476": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "52abef87-ed41-515b-a04d-36d6b760c91a": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "537325da-bd14-5eac-9038-5ca9f2735d24": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "561d1e68-a09a-54e7-b871-df2ecec102dd": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "828d025c-6d37-5420-bdc3-ea3b6f8d2024": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "91139175-2135-5749-854b-11f2cf1c9198": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "99b3df94-8ae5-52f5-a441-c5d4f4f41466": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "9c0044ba-69c7-578a-91db-1f177fd1bd49": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "9e367447-4385-54ef-9f84-e46baa1ee682": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  },
+  "9f787425-7529-5d6c-b377-6b82ed4613ab": {
+    "verdict": "FAIL",
+    "practical_validity": 0
+  },
+  "d3236b80-36d7-5df0-ac29-c51ba34cb336": {
+    "verdict": "PASS",
+    "practical_validity": 3
+  }
+}

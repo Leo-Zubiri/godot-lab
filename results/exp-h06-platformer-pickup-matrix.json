@@ -1,0 +1,463 @@
+{
+  "runs": {
+    "0bd36f68-7924-5975-bc4c-dca1d87e2df2": {
+      "condition": "A_prime",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.045682200000000006,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-010",
+      "provenance": null,
+      "references_empty": true
+    },
+    "24d62fcb-f24b-5838-873d-78d79a2a12c8": {
+      "condition": "B",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 1,
+      "cost_usd": 0.09966,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-001",
+      "provenance": {
+        "existence": 3,
+        "relevance": 3,
+        "claim_source_correspondence": 2,
+        "attribution_correctness": 3
+      },
+      "references_empty": false
+    },
+    "307b6749-187d-51cd-a6d3-a09ee4d25845": {
+      "condition": "A_prime",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0538063,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2,
+        "requirement_fulfillment": 2,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-011",
+      "provenance": null,
+      "references_empty": true
+    },
+    "33987f47-beac-5670-8aed-dda64dbd6754": {
+      "condition": "B",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 6,
+      "cost_usd": 0.1212787,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-004",
+      "provenance": {
+        "existence": 3,
+        "relevance": 3,
+        "claim_source_correspondence": 2,
+        "attribution_correctness": 2
+      },
+      "references_empty": false
+    },
+    "3d270d38-47da-55c6-a4d9-501c24115476": {
+      "condition": "A",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0259384,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 2,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 2,
+        "source_quality": 0,
+        "provenance": 0,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-009",
+      "provenance": {
+        "existence": 0,
+        "relevance": 3,
+        "claim_source_correspondence": 1,
+        "attribution_correctness": 1
+      },
+      "references_empty": false
+    },
+    "52abef87-ed41-515b-a04d-36d6b760c91a": {
+      "condition": "A_prime",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.058863900000000004,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-003",
+      "provenance": null,
+      "references_empty": true
+    },
+    "537325da-bd14-5eac-9038-5ca9f2735d24": {
+      "condition": "A",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0320003,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 0,
+        "provenance": 0,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-008",
+      "provenance": null,
+      "references_empty": true
+    },
+    "561d1e68-a09a-54e7-b871-df2ecec102dd": {
+      "condition": "A",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0238224,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-005",
+      "provenance": null,
+      "references_empty": true
+    },
+    "828d025c-6d37-5420-bdc3-ea3b6f8d2024": {
+      "condition": "B",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 4,
+      "cost_usd": 0.0995961,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-006",
+      "provenance": {
+        "existence": 3,
+        "relevance": 3,
+        "claim_source_correspondence": 2,
+        "attribution_correctness": 2
+      },
+      "references_empty": false
+    },
+    "91139175-2135-5749-854b-11f2cf1c9198": {
+      "condition": "A",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.029134300000000002,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 2,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2,
+        "requirement_fulfillment": 2,
+        "source_quality": 1,
+        "provenance": 0,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-012",
+      "provenance": {
+        "existence": 1,
+        "relevance": 3,
+        "claim_source_correspondence": 1,
+        "attribution_correctness": 2
+      },
+      "references_empty": false
+    },
+    "99b3df94-8ae5-52f5-a441-c5d4f4f41466": {
+      "condition": "A_prime",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0462202,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-014",
+      "provenance": null,
+      "references_empty": true
+    },
+    "9c0044ba-69c7-578a-91db-1f177fd1bd49": {
+      "condition": "A_prime",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0538997,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 0,
+        "provenance": 1,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-013",
+      "provenance": null,
+      "references_empty": true
+    },
+    "9e367447-4385-54ef-9f84-e46baa1ee682": {
+      "condition": "B",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.1046695,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-015",
+      "provenance": {
+        "existence": 3,
+        "relevance": 3,
+        "claim_source_correspondence": 2,
+        "attribution_correctness": 3
+      },
+      "references_empty": false
+    },
+    "9f787425-7529-5d6c-b377-6b82ed4613ab": {
+      "condition": "A",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 0,
+      "cost_usd": 0.0254645,
+      "practical_validity": 0,
+      "gut_verdict": "FAIL",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "blind_id": "q-007",
+      "provenance": {
+        "existence": 1,
+        "relevance": 3,
+        "claim_source_correspondence": 1,
+        "attribution_correctness": 2
+      },
+      "references_empty": false
+    },
+    "d3236b80-36d7-5df0-ac29-c51ba34cb336": {
+      "condition": "B",
+      "gen_status": "ok",
+      "resolved_model": "claude-sonnet-5-5",
+      "knowledge_read_count": 5,
+      "cost_usd": 0.1175344,
+      "practical_validity": 3,
+      "gut_verdict": "PASS",
+      "quality": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 3,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "blind_id": "q-002",
+      "provenance": {
+        "existence": 3,
+        "relevance": 3,
+        "claim_source_correspondence": 2,
+        "attribution_correctness": 2
+      },
+      "references_empty": false
+    }
+  },
+  "by_condition": {
+    "A": {
+      "n": 5,
+      "gen_status": {
+        "ok": 5
+      },
+      "practical_validity_mean": 0,
+      "gut_pass": 0,
+      "quality_means": {
+        "technical_correctness": 2.6,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2.4,
+        "requirement_fulfillment": 2.6,
+        "source_quality": 0.6,
+        "provenance": 0.4,
+        "hallucinations": 3,
+        "clarity": 3
+      },
+      "quality_overall_mean": 2.289,
+      "mean_knowledge_reads": 0,
+      "provenance_runs_with_refs": 3
+    },
+    "A_prime": {
+      "n": 5,
+      "gen_status": {
+        "ok": 5
+      },
+      "practical_validity_mean": 1.8,
+      "gut_pass": 3,
+      "quality_means": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2.6,
+        "requirement_fulfillment": 2.8,
+        "source_quality": 0.8,
+        "provenance": 1,
+        "hallucinations": 2.6,
+        "clarity": 3
+      },
+      "quality_overall_mean": 2.422,
+      "mean_knowledge_reads": 0,
+      "provenance_runs_with_refs": 0
+    },
+    "B": {
+      "n": 5,
+      "gen_status": {
+        "ok": 5
+      },
+      "practical_validity_mean": 3,
+      "gut_pass": 5,
+      "quality_means": {
+        "technical_correctness": 3,
+        "api_correctness": 3,
+        "version_compatibility": 3,
+        "architectural_quality": 2.8,
+        "requirement_fulfillment": 3,
+        "source_quality": 1,
+        "provenance": 1,
+        "hallucinations": 2,
+        "clarity": 3
+      },
+      "quality_overall_mean": 2.422,
+      "mean_knowledge_reads": 3.2,
+      "provenance_runs_with_refs": 5
+    }
+  },
+  "caveats": [
+    "N=5 per condition is EXPLORATORY; no statistical significance.",
+    "Generator and evaluator are both Anthropic models (not provider-independent).",
+    "practical_validity is objective (GUT); quality is blind-evaluator; provenance is separate \u2014 never combined.",
+    "A' is an instruction+empty-dir placebo; see mean_knowledge_reads for A' retrieval attempts."
+  ]
+}

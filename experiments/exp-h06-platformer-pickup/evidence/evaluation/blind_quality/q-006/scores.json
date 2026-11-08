@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-006",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 3,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 3,
+    "requirement_fulfillment": 3,
+    "source_quality": 1,
+    "provenance": 1,
+    "hallucinations": 2,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Gravity, grounded jump, axis movement and one-shot pickup with deferred monitoring are correct.",
+    "api_correctness": "get_gravity, get_axis, move_and_slide, signal emit, and set_deferred are used correctly.",
+    "version_compatibility": "Uses Godot 4 idioms: typed signal emit, Callable connect, argument-less move_and_slide.",
+    "architectural_quality": "Coin owns its own collection logic, uses a signal and a group check; decoupled.",
+    "requirement_fulfillment": "Movement, jump, gravity, and coin collected exactly once all implemented.",
+    "source_quality": "Reasoning explained but no documentation or sources cited.",
+    "provenance": "Claims not traceable to any referenced docs or evidence.",
+    "hallucinations": "get_gravity described as project default only; it also includes area overrides.",
+    "clarity": "Clear, organized per-file explanation that you can act on."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.09585139999999999
+}

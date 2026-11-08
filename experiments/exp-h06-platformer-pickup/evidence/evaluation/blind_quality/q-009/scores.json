@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-009",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 2,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 3,
+    "requirement_fulfillment": 2,
+    "source_quality": 0,
+    "provenance": 0,
+    "hallucinations": 3,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Logic is sound, but the player is never added to the 'player' group.",
+    "api_correctness": "All APIs (get_axis, move_and_slide, body_entered.connect, emit) are valid.",
+    "version_compatibility": "Uses Godot 4 idioms throughout: velocity property, no-arg move_and_slide, typed signals.",
+    "architectural_quality": "Coin owns its signal and flag; player is decoupled and clean.",
+    "requirement_fulfillment": "Movement and one-shot pickup are done; group membership is left to the scene.",
+    "source_quality": "No sources or references cited.",
+    "provenance": "Claims are not attributed to any documentation or evidence.",
+    "hallucinations": "No invented APIs or behaviors detected.",
+    "clarity": "Explanation is concise, organized per file, and actionable."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.0995114
+}

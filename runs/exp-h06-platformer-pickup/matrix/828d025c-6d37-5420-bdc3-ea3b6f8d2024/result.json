@@ -1,0 +1,30 @@
+{
+  "run_id": "828d025c-6d37-5420-bdc3-ea3b6f8d2024",
+  "condition": "B",
+  "trial": 3,
+  "order_index": 7,
+  "status": "ok",
+  "return_code": 0,
+  "resolved_model": "claude-sonnet-5-5",
+  "requested_model": "claude-sonnet-5-5",
+  "effort": "high",
+  "is_error": false,
+  "subtype": "success",
+  "cost_usd": 0.0995961,
+  "duration_ms": 14392,
+  "num_turns": 6,
+  "malformed_contract": false,
+  "knowledge_reads": [
+    "/knowledge",
+    "/knowledge/notes/area2d-detection.md",
+    "/knowledge/notes/characterbody2d-movement.md",
+    "/knowledge/notes/gdscript-signals.md"
+  ],
+  "knowledge_read_count": 4,
+  "all_file_reads": [
+    "/knowledge",
+    "/knowledge/notes/area2d-detection.md",
+    "/knowledge/notes/characterbody2d-movement.md",
+    "/knowledge/notes/gdscript-signals.md"
+  ]
+}

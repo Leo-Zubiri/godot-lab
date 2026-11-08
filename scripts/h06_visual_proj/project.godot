@@ -1,0 +1,10 @@
+; AUXILIARY visual-verification project (NOT part of the frozen experiment). Loads the ORIGINAL candidate scripts
+; (unmodified) to render genuine engine screenshots. Input actions + collision layers mirror the GUT harness.
+config_version=5
+[application]
+config/name="h06-visual-verification"
+config/features=PackedStringArray("4.7")
+run/main_scene="res://main.tscn"
+[display]
+window/size/viewport_width=480
+window/size/viewport_height=270

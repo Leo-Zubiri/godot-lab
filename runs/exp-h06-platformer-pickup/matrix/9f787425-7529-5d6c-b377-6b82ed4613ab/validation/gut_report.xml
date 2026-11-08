@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="GutTests" failures="1" tests="8" >
+  <testsuite name="test/test_h06.gd" tests="6" failures="1" skipped="0" time="1.285939" >
+      <testcase name="test_player_script_valid" assertions="1" status="pass" classname="test/test_h06.gd" time="0.002653" >
+      </testcase>
+      <testcase name="test_gravity_pulls_down_in_air" assertions="3" status="pass" classname="test/test_h06.gd" time="0.227759" >
+      </testcase>
+      <testcase name="test_lands_on_floor" assertions="2" status="pass" classname="test/test_h06.gd" time="0.545081" >
+      </testcase>
+      <testcase name="test_horizontal_movement" assertions="2" status="fail" classname="test/test_h06.gd" time="0.179375" >
+      <failure message="failed"><![CDATA[[200.00000000000000000000] expected to equal [300.0] +/- [1.0]:  velocity.x should equal SPEED while moving right
+            at line 107]]></failure></testcase>
+      <testcase name="test_jump_from_floor" assertions="3" status="pass" classname="test/test_h06.gd" time="0.131086" >
+      </testcase>
+      <testcase name="test_coin_collected_exactly_once" assertions="3" status="pass" classname="test/test_h06.gd" time="0.199985" >
+      </testcase>
+  </testsuite>
+  <testsuite name="test/test_harness_sanity.gd" tests="2" failures="0" skipped="0" time="0.199156" >
+      <testcase name="test_sanity_matching_mask_detects" assertions="1" status="pass" classname="test/test_harness_sanity.gd" time="0.1027" >
+      </testcase>
+      <testcase name="test_sanity_nonmatching_mask_ignores" assertions="1" status="pass" classname="test/test_harness_sanity.gd" time="0.096456" >
+      </testcase>
+  </testsuite>
+</testsuites>

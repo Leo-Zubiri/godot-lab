@@ -1,0 +1,45 @@
+{
+  "run_id": "d3236b80-36d7-5df0-ac29-c51ba34cb336",
+  "references_raw": "/knowledge/notes/characterbody2d-movement.md\n/knowledge/notes/area2d-detection.md\n/knowledge/notes/gdscript-signals.md",
+  "references_empty": false,
+  "cited_count": 3,
+  "cited": [
+    {
+      "ref": "/knowledge/notes/characterbody2d-movement.md",
+      "exists": true,
+      "path": "notes/characterbody2d-movement.md"
+    },
+    {
+      "ref": "/knowledge/notes/area2d-detection.md",
+      "exists": true,
+      "path": "notes/area2d-detection.md"
+    },
+    {
+      "ref": "/knowledge/notes/gdscript-signals.md",
+      "exists": true,
+      "path": "notes/gdscript-signals.md"
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores",
+  "provenance_scores": {
+    "existence": 3,
+    "relevance": 3,
+    "claim_source_correspondence": 2,
+    "attribution_correctness": 2
+  },
+  "provenance_justifications": {
+    "existence": "All three cited notes exist in the knowledge base as referenced.",
+    "relevance": "The notes cover CharacterBody2D movement, Area2D pickups and signals, which the task uses.",
+    "claim_source_correspondence": "Most claims match; the deferred-monitoring and flag-guard claims go beyond the sources.",
+    "attribution_correctness": "Generic 'reference notes' attribution; extra claims are implicitly credited to sources lacking them."
+  },
+  "parse_ok": true,
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "cost_usd": 0.1032194
+}

@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-007",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 3,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 2,
+    "requirement_fulfillment": 3,
+    "source_quality": 1,
+    "provenance": 1,
+    "hallucinations": 3,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Gravity, floor-gated jump, horizontal movement and the one-time coin pickup are all correct.",
+    "api_correctness": "Valid APIs: move_and_slide, get_axis, body_entered.connect, is_in_group, emit.",
+    "version_compatibility": "Uses Godot 4 idioms. Newer get_gravity() not used, but the ProjectSettings read is still valid.",
+    "architectural_quality": "Clean and decoupled through the signal. Gravity read once at init and a hardcoded group are minor concerns.",
+    "requirement_fulfillment": "Covers movement, jump, gravity and a single-emission pickup with player filtering.",
+    "source_quality": "No documentation or knowledge sources cited. The claims rest only on the explanation.",
+    "provenance": "No traceable references or note ids. The claims are unattributed.",
+    "hallucinations": "No invented APIs or behaviors found. The queue_free and is_on_floor claims are accurate.",
+    "clarity": "Clear, actionable explanation for each file and design choice."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.0945674
+}

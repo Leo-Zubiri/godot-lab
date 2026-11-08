@@ -1,0 +1,21 @@
+You are assisting with a Godot 4.7.2 GDScript project. Complete the task. Return EXACTLY three sections and nothing else, with no narration about your process, tools, or sources:
+### script
+(one or more ```gdscript code blocks: the deliverable files)
+### explanation
+(technical explanation only)
+### references
+(references actually used, one per line, or the single word: none)
+
+
+TASK:
+In **Godot 4.7.2 (GDScript)**, implement a minimal 2D platformer pickup. Produce **two scripts** following the output
+contract (`### script` / `### explanation` / `### references`):
+
+- **`player.gd`** — attached to a `CharacterBody2D`. Apply gravity each physics frame while airborne; move left/right
+  using the input actions **`move_left`**/**`move_right`**; **jump** (upward velocity) on the **`jump`** action only when
+  on the floor; use `move_and_slide()`.
+- **`coin.gd`** — attached to an `Area2D`. Declare a signal **`collected`**. When a node in group **`"player"`** overlaps
+  the coin, emit `collected` and remove the coin with `queue_free()` — **exactly once** (never collect twice).
+
+Assume the scene, collision shapes, collision layers/masks, the `"player"` group, and the input actions are provided by
+the project/harness. Do not add process narration to the deliverable.

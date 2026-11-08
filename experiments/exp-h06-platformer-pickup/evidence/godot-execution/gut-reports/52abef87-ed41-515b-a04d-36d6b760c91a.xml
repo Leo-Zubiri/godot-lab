@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="GutTests" failures="0" tests="8" >
+  <testsuite name="test/test_h06.gd" tests="6" failures="0" skipped="0" time="1.285988" >
+      <testcase name="test_player_script_valid" assertions="1" status="pass" classname="test/test_h06.gd" time="0.002746" >
+      </testcase>
+      <testcase name="test_gravity_pulls_down_in_air" assertions="3" status="pass" classname="test/test_h06.gd" time="0.220894" >
+      </testcase>
+      <testcase name="test_lands_on_floor" assertions="2" status="pass" classname="test/test_h06.gd" time="0.551999" >
+      </testcase>
+      <testcase name="test_horizontal_movement" assertions="2" status="pass" classname="test/test_h06.gd" time="0.179328" >
+      </testcase>
+      <testcase name="test_jump_from_floor" assertions="3" status="pass" classname="test/test_h06.gd" time="0.130961" >
+      </testcase>
+      <testcase name="test_coin_collected_exactly_once" assertions="3" status="pass" classname="test/test_h06.gd" time="0.20006" >
+      </testcase>
+  </testsuite>
+  <testsuite name="test/test_harness_sanity.gd" tests="2" failures="0" skipped="0" time="0.199496" >
+      <testcase name="test_sanity_matching_mask_detects" assertions="1" status="pass" classname="test/test_harness_sanity.gd" time="0.102982" >
+      </testcase>
+      <testcase name="test_sanity_nonmatching_mask_ignores" assertions="1" status="pass" classname="test/test_harness_sanity.gd" time="0.096514" >
+      </testcase>
+  </testsuite>
+</testsuites>

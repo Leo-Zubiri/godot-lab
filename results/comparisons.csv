@@ -1,0 +1,16 @@
+run_id,condition,blind_id,gut_verdict,practical_validity,speed_const,q_overall,q_technical,q_api,q_architecture,q_requirements,q_hallucinations,q_clarity,knowledge_reads,num_turns,refs_cited,prov_existence,prov_relevance,prov_correspondence,prov_attribution,visual_collected,gen_cost_usd
+3d270d38-47da-55c6-a4d9-501c24115476,A,q-009,FAIL,0,,2.11,2,3,3,2,3,3,0,1,4,0,3,1,1,True,0.0259384
+537325da-bd14-5eac-9038-5ca9f2735d24,A,q-008,FAIL,0,,2.33,3,3,3,3,3,3,0,1,0,,,,,True,0.0320003
+561d1e68-a09a-54e7-b871-df2ecec102dd,A,q-005,FAIL,0,,2.44,3,3,2,3,3,3,0,1,0,,,,,True,0.0238224
+91139175-2135-5749-854b-11f2cf1c9198,A,q-012,FAIL,0,,2.11,2,3,2,2,3,3,0,1,5,1,3,1,2,True,0.029134300000000002
+9f787425-7529-5d6c-b377-6b82ed4613ab,A,q-007,FAIL,0,,2.44,3,3,2,3,3,3,0,1,4,1,3,1,2,True,0.0254645
+0bd36f68-7924-5975-bc4c-dca1d87e2df2,A_prime,q-010,PASS,3,,2.56,3,3,3,3,3,3,0,2,0,,,,,True,0.045682200000000006
+307b6749-187d-51cd-a6d3-a09ee4d25845,A_prime,q-011,FAIL,0,,2.33,3,3,2,2,3,3,0,2,0,,,,,True,0.0538063
+52abef87-ed41-515b-a04d-36d6b760c91a,A_prime,q-003,PASS,3,,2.44,3,3,3,3,2,3,0,2,0,,,,,True,0.058863900000000004
+99b3df94-8ae5-52f5-a441-c5d4f4f41466,A_prime,q-014,FAIL,0,,2.33,3,3,2,3,2,3,0,2,0,,,,,True,0.0462202
+9c0044ba-69c7-578a-91db-1f177fd1bd49,A_prime,q-013,PASS,3,,2.44,3,3,3,3,3,3,0,2,0,,,,,True,0.0538997
+24d62fcb-f24b-5838-873d-78d79a2a12c8,B,q-001,PASS,3,300,2.33,3,3,2,3,2,3,1,4,4,3,3,2,3,True,0.09966
+33987f47-beac-5670-8aed-dda64dbd6754,B,q-004,PASS,3,300,2.44,3,3,3,3,2,3,6,8,3,3,3,2,2,True,0.1212787
+828d025c-6d37-5420-bdc3-ea3b6f8d2024,B,q-006,PASS,3,300,2.44,3,3,3,3,2,3,4,6,3,3,3,2,2,True,0.0995961
+9e367447-4385-54ef-9f84-e46baa1ee682,B,q-015,PASS,3,300,2.44,3,3,3,3,2,3,0,5,5,3,3,2,3,True,0.1046695
+d3236b80-36d7-5df0-ac29-c51ba34cb336,B,q-002,PASS,3,300,2.44,3,3,3,3,2,3,5,7,3,3,3,2,2,True,0.1175344

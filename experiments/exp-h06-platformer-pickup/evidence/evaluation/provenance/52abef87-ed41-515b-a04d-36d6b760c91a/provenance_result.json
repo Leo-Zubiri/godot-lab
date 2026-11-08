@@ -1,0 +1,16 @@
+{
+  "run_id": "52abef87-ed41-515b-a04d-36d6b760c91a",
+  "references_raw": "none",
+  "references_empty": true,
+  "cited_count": 0,
+  "cited": [],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores",
+  "provenance_scores": null,
+  "provenance_note": "no references cited -> provenance NA (not scored, not 0)"
+}

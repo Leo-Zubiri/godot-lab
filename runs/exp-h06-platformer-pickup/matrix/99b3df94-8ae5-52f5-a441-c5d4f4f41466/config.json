@@ -1,0 +1,18 @@
+{
+  "run_id": "99b3df94-8ae5-52f5-a441-c5d4f4f41466",
+  "condition": "A_prime",
+  "trial": 1,
+  "order_index": 14,
+  "gen_model_id": "claude-sonnet-5-5",
+  "effort": "high",
+  "web_access": "off",
+  "isolation": "bwrap-ro-bind",
+  "sandbox": "scripts/h06_sandbox.sh",
+  "knowledge_mount": "/knowledge (ro, empty)",
+  "in_sandbox_knowledge_path": "/knowledge",
+  "knowledge_host_path": "/home/zub/.cache/h06-empty-knowledge",
+  "knowledge_pin": null,
+  "max_budget_usd": 5.0,
+  "timeout_s": 600,
+  "preserve_attempt": true
+}

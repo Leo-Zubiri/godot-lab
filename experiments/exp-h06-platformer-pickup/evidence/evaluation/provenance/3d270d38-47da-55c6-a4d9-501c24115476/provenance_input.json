@@ -1,0 +1,35 @@
+{
+  "run_id": "3d270d38-47da-55c6-a4d9-501c24115476",
+  "references_raw": "- Godot docs: CharacterBody2D (`move_and_slide`, `is_on_floor`, `velocity`)\n- Godot docs: Area2D (`body_entered` signal)\n- Godot docs: Using CharacterBody2D/move_and_slide (platformer movement example)\n- Godot docs: Node (`is_in_group`, `queue_free`)",
+  "references_empty": false,
+  "cited_count": 4,
+  "cited": [
+    {
+      "ref": "Godot docs: CharacterBody2D (`move_and_slide`, `is_on_floor`, `velocity`)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot docs: Area2D (`body_entered` signal)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot docs: Using CharacterBody2D/move_and_slide (platformer movement example)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot docs: Node (`is_in_group`, `queue_free`)",
+      "exists": false,
+      "path": null
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores"
+}

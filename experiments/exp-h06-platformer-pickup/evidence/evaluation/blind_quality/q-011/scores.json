@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-011",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 3,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 2,
+    "requirement_fulfillment": 2,
+    "source_quality": 1,
+    "provenance": 1,
+    "hallucinations": 3,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Gravity, floor-gated jump, axis movement and the collect-once guard are all correct.",
+    "api_correctness": "get_gravity, get_axis, move_toward, set_deferred and the signal APIs are used validly.",
+    "version_compatibility": "Godot 4.x idioms throughout; get_gravity() exists in 4.3 and later.",
+    "architectural_quality": "Clean and decoupled, but the player never adds itself to the 'player' group.",
+    "requirement_fulfillment": "Core features are done; the 'player' group dependency is left to the scene setup.",
+    "source_quality": "No sources cited; the explanation only gives technical reasoning.",
+    "provenance": "No references to docs or notes; claims are not traceable.",
+    "hallucinations": "No invented APIs or behaviors found.",
+    "clarity": "Clear, well-organized explanation that you can act on."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.0951554
+}

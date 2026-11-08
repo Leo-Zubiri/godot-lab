@@ -1,0 +1,55 @@
+{
+  "run_id": "9e367447-4385-54ef-9f84-e46baa1ee682",
+  "references_raw": "/knowledge/notes/characterbody2d-movement.md\n/knowledge/notes/area2d-detection.md\n/knowledge/notes/input-handling.md\n/knowledge/sources/src-characterbody2d.md\n/knowledge/sources/src-area2d.md",
+  "references_empty": false,
+  "cited_count": 5,
+  "cited": [
+    {
+      "ref": "/knowledge/notes/characterbody2d-movement.md",
+      "exists": true,
+      "path": "notes/characterbody2d-movement.md"
+    },
+    {
+      "ref": "/knowledge/notes/area2d-detection.md",
+      "exists": true,
+      "path": "notes/area2d-detection.md"
+    },
+    {
+      "ref": "/knowledge/notes/input-handling.md",
+      "exists": true,
+      "path": "notes/input-handling.md"
+    },
+    {
+      "ref": "/knowledge/sources/src-characterbody2d.md",
+      "exists": true,
+      "path": "sources/src-characterbody2d.md"
+    },
+    {
+      "ref": "/knowledge/sources/src-area2d.md",
+      "exists": true,
+      "path": "sources/src-area2d.md"
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores",
+  "provenance_scores": {
+    "existence": 3,
+    "relevance": 3,
+    "claim_source_correspondence": 2,
+    "attribution_correctness": 3
+  },
+  "provenance_justifications": {
+    "existence": "All five cited notes and sources exist in the KB as given.",
+    "relevance": "Movement, input, and Area2D pickup entries all bear directly on the task.",
+    "claim_source_correspondence": "Movement and input claims match. The set_deferred monitoring and re-entrancy claims go beyond the sources.",
+    "attribution_correctness": "Each claim lines up with the right cited entry. Nothing is misattributed."
+  },
+  "parse_ok": true,
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "cost_usd": 0.1138794
+}

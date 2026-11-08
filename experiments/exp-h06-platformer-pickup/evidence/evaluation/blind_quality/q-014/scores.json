@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-014",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 3,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 2,
+    "requirement_fulfillment": 3,
+    "source_quality": 1,
+    "provenance": 1,
+    "hallucinations": 2,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Gravity, floor-only jump, and single-collection guard with deferred monitoring are all correct.",
+    "api_correctness": "get_gravity, get_axis, move_and_slide, set_deferred, and signal emit are all valid.",
+    "version_compatibility": "Uses only Godot 4 idioms, including typed signals and the get_gravity method added in 4.3.",
+    "architectural_quality": "Clean and decoupled through the signal and the group check; the player group is assumed, not set.",
+    "requirement_fulfillment": "Movement, jump, gravity, and a single coin pickup with its signal are all implemented.",
+    "source_quality": "Cites no documentation or sources for its claims.",
+    "provenance": "Claims can't be traced to evidence; it admits the scripts were not run.",
+    "hallucinations": "Says get_axis returns only -1, 0, or 1, but analog input gives fractional values.",
+    "clarity": "Clear, organized per script, and explains the reason for each choice."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.0948554
+}

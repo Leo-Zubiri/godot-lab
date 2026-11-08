@@ -1,0 +1,45 @@
+{
+  "run_id": "828d025c-6d37-5420-bdc3-ea3b6f8d2024",
+  "references_raw": "/knowledge/notes/characterbody2d-movement.md\n/knowledge/notes/area2d-detection.md\n/knowledge/notes/gdscript-signals.md",
+  "references_empty": false,
+  "cited_count": 3,
+  "cited": [
+    {
+      "ref": "/knowledge/notes/characterbody2d-movement.md",
+      "exists": true,
+      "path": "notes/characterbody2d-movement.md"
+    },
+    {
+      "ref": "/knowledge/notes/area2d-detection.md",
+      "exists": true,
+      "path": "notes/area2d-detection.md"
+    },
+    {
+      "ref": "/knowledge/notes/gdscript-signals.md",
+      "exists": true,
+      "path": "notes/gdscript-signals.md"
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores",
+  "provenance_scores": {
+    "existence": 3,
+    "relevance": 3,
+    "claim_source_correspondence": 2,
+    "attribution_correctness": 2
+  },
+  "provenance_justifications": {
+    "existence": "All three cited notes exist in the knowledge base with this content.",
+    "relevance": "Notes cover CharacterBody2D movement, Area2D pickups and signals, as the task needs.",
+    "claim_source_correspondence": "Most claims match; deferred monitoring and get_gravity details go beyond the sources.",
+    "attribution_correctness": "Cited notes cover the claims, but no claim is tied to a specific note."
+  },
+  "parse_ok": true,
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "cost_usd": 0.10441139999999999
+}

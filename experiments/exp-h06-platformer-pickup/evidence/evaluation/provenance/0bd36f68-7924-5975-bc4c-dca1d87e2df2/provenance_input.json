@@ -1,0 +1,14 @@
+{
+  "run_id": "0bd36f68-7924-5975-bc4c-dca1d87e2df2",
+  "references_raw": "none",
+  "references_empty": true,
+  "cited_count": 0,
+  "cited": [],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores"
+}

@@ -1,0 +1,62 @@
+{
+  "coin_removed": true,
+  "collected": true,
+  "run_id": "9e367447-4385-54ef-9f84-e46baa1ee682",
+  "shots": [
+    {
+      "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+      "coin_present": true,
+      "collected": false,
+      "file": "01_initial.png",
+      "player_on_floor": false,
+      "player_pos": [
+        120.0,
+        40.0
+      ]
+    },
+    {
+      "caption": "Player at rest on the ground (is_on_floor)",
+      "coin_present": true,
+      "collected": false,
+      "file": "02_grounded.png",
+      "player_on_floor": true,
+      "player_pos": [
+        120.0,
+        179.990295410156
+      ]
+    },
+    {
+      "caption": "Player airborne during a jump",
+      "coin_present": true,
+      "collected": false,
+      "file": "03_jump.png",
+      "player_on_floor": false,
+      "player_pos": [
+        120.0,
+        138.975112915039
+      ]
+    },
+    {
+      "caption": "Player moving right, approaching the coin",
+      "coin_present": true,
+      "collected": false,
+      "file": "04_approach.png",
+      "player_on_floor": true,
+      "player_pos": [
+        260.0,
+        179.998901367188
+      ]
+    },
+    {
+      "caption": "After overlap: 'collected' fired=true, coin removed=true",
+      "coin_present": false,
+      "collected": true,
+      "file": "05_collected.png",
+      "player_on_floor": true,
+      "player_pos": [
+        340.0,
+        179.998901367188
+      ]
+    }
+  ]
+}

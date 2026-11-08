@@ -1,0 +1,1262 @@
+[
+  {
+    "run_id": "0bd36f68-7924-5975-bc4c-dca1d87e2df2",
+    "condition": "A_prime",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "7d9c16a4f4268bf2f9a6328f4ef5559ed439d408a5eb328566968fb1f7d31cc9",
+    "coin_sha256_before": "1e197767c839053ef67673b7978cd72e2cb5d92d28c3776610bf9ecb4fa13f56",
+    "exit_code": 0,
+    "player_sha256_after": "7d9c16a4f4268bf2f9a6328f4ef5559ed439d408a5eb328566968fb1f7d31cc9",
+    "coin_sha256_after": "1e197767c839053ef67673b7978cd72e2cb5d92d28c3776610bf9ecb4fa13f56",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "0bd36f68-7924-5975-bc4c-dca1d87e2df2",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "24d62fcb-f24b-5838-873d-78d79a2a12c8",
+    "condition": "B",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "1a9339d6bcae43f07c9ac4b1fc20382a8b2188e33b65d8fd141b51573c828b56",
+    "coin_sha256_before": "0fe03834eaff2b1907f2a4646cb66d8648835da3ac8711575607b1e624621051",
+    "exit_code": 0,
+    "player_sha256_after": "1a9339d6bcae43f07c9ac4b1fc20382a8b2188e33b65d8fd141b51573c828b56",
+    "coin_sha256_after": "0fe03834eaff2b1907f2a4646cb66d8648835da3ac8711575607b1e624621051",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "24d62fcb-f24b-5838-873d-78d79a2a12c8",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "307b6749-187d-51cd-a6d3-a09ee4d25845",
+    "condition": "A_prime",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "c81f4d711ddbd212f3ef12cd8f40fb574f1d34b28af9cef9c1e8fad201be4c2f",
+    "coin_sha256_before": "2bfab7c226be5cff4db0052548fbac815eb26a6fec3745e9b76ace246b909467",
+    "exit_code": 0,
+    "player_sha256_after": "c81f4d711ddbd212f3ef12cd8f40fb574f1d34b28af9cef9c1e8fad201be4c2f",
+    "coin_sha256_after": "2bfab7c226be5cff4db0052548fbac815eb26a6fec3745e9b76ace246b909467",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "307b6749-187d-51cd-a6d3-a09ee4d25845",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            255.777587890625,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            348.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "33987f47-beac-5670-8aed-dda64dbd6754",
+    "condition": "B",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "1b8d2abc4dd504e4c1a358a2bcbafecc42f40c4abd03090342d71b6d9ce110c7",
+    "coin_sha256_before": "7493f1a939392de8bfcb489cbf81b1f52be7f85a377dae0e033df2c2c734e8d4",
+    "exit_code": 0,
+    "player_sha256_after": "1b8d2abc4dd504e4c1a358a2bcbafecc42f40c4abd03090342d71b6d9ce110c7",
+    "coin_sha256_after": "7493f1a939392de8bfcb489cbf81b1f52be7f85a377dae0e033df2c2c734e8d4",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "33987f47-beac-5670-8aed-dda64dbd6754",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "3d270d38-47da-55c6-a4d9-501c24115476",
+    "condition": "A",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "954addd25db1702a8039c0d0b1398ad0548b884d6e2d763aa1ab73834f2b85ce",
+    "coin_sha256_before": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "exit_code": 0,
+    "player_sha256_after": "954addd25db1702a8039c0d0b1398ad0548b884d6e2d763aa1ab73834f2b85ce",
+    "coin_sha256_after": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "3d270d38-47da-55c6-a4d9-501c24115476",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.2722206115723
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            256.666473388672,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "52abef87-ed41-515b-a04d-36d6b760c91a",
+    "condition": "A_prime",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "9610ae16d1c0fa91c98cce2a1c8fcd2dbc6907eb3c8c0349ffda4a0f01b61235",
+    "coin_sha256_before": "aef336258e3c364e4b4035e0437a55524d59e87853f1749548352e1d16eccf14",
+    "exit_code": 0,
+    "player_sha256_after": "9610ae16d1c0fa91c98cce2a1c8fcd2dbc6907eb3c8c0349ffda4a0f01b61235",
+    "coin_sha256_after": "aef336258e3c364e4b4035e0437a55524d59e87853f1749548352e1d16eccf14",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "52abef87-ed41-515b-a04d-36d6b760c91a",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "537325da-bd14-5eac-9038-5ca9f2735d24",
+    "condition": "A",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "4d6a26700f1bc5a100a6063376ffda9ed8640611e0b05f52b590ba8e93a63243",
+    "coin_sha256_before": "13fb46239c9e308eb684ed82ffde1756cd65caa585109bdd7cb3b13a6fde4e17",
+    "exit_code": 0,
+    "player_sha256_after": "4d6a26700f1bc5a100a6063376ffda9ed8640611e0b05f52b590ba8e93a63243",
+    "coin_sha256_after": "13fb46239c9e308eb684ed82ffde1756cd65caa585109bdd7cb3b13a6fde4e17",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "537325da-bd14-5eac-9038-5ca9f2735d24",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            256.666473388672,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "561d1e68-a09a-54e7-b871-df2ecec102dd",
+    "condition": "A",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "954addd25db1702a8039c0d0b1398ad0548b884d6e2d763aa1ab73834f2b85ce",
+    "coin_sha256_before": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "exit_code": 0,
+    "player_sha256_after": "954addd25db1702a8039c0d0b1398ad0548b884d6e2d763aa1ab73834f2b85ce",
+    "coin_sha256_after": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "561d1e68-a09a-54e7-b871-df2ecec102dd",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.2722206115723
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            256.666473388672,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "828d025c-6d37-5420-bdc3-ea3b6f8d2024",
+    "condition": "B",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "0b22f9b3dc9647b5275eb0b805c0710489f08e435b415059b20fee64a9b6580f",
+    "coin_sha256_before": "8e747b7c907931c1815ae061857955a3a4c9d80e8ef7bedca4f03b1412c1342a",
+    "exit_code": 0,
+    "player_sha256_after": "0b22f9b3dc9647b5275eb0b805c0710489f08e435b415059b20fee64a9b6580f",
+    "coin_sha256_after": "8e747b7c907931c1815ae061857955a3a4c9d80e8ef7bedca4f03b1412c1342a",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "828d025c-6d37-5420-bdc3-ea3b6f8d2024",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "91139175-2135-5749-854b-11f2cf1c9198",
+    "condition": "A",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "3f816e71e1d0f4622818d6e47db0639252aa32aab57852cad83b276085f37fd8",
+    "coin_sha256_before": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "exit_code": 0,
+    "player_sha256_after": "3f816e71e1d0f4622818d6e47db0639252aa32aab57852cad83b276085f37fd8",
+    "coin_sha256_after": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "91139175-2135-5749-854b-11f2cf1c9198",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.2722206115723
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            256.666473388672,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "99b3df94-8ae5-52f5-a441-c5d4f4f41466",
+    "condition": "A_prime",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "ecb63ee000a3c6004d447248d5dbe49d6d3df412b2cbecc2f5975fa0251a632b",
+    "coin_sha256_before": "33f95a9efe52381c5e28066c6ac081bde9ca1db73f6964f46b07426c15e93ba6",
+    "exit_code": 0,
+    "player_sha256_after": "ecb63ee000a3c6004d447248d5dbe49d6d3df412b2cbecc2f5975fa0251a632b",
+    "coin_sha256_after": "33f95a9efe52381c5e28066c6ac081bde9ca1db73f6964f46b07426c15e93ba6",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "99b3df94-8ae5-52f5-a441-c5d4f4f41466",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            256.666473388672,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "9c0044ba-69c7-578a-91db-1f177fd1bd49",
+    "condition": "A_prime",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "2dc06cd99d511a5285450ff1599a073addd6a716e13580cba6c47e94a6e3714d",
+    "coin_sha256_before": "ec17e304a3b3563e01f1f31f75b8b60090c68e9461c0e370fd7ca0ab6b61b15b",
+    "exit_code": 0,
+    "player_sha256_after": "2dc06cd99d511a5285450ff1599a073addd6a716e13580cba6c47e94a6e3714d",
+    "coin_sha256_after": "ec17e304a3b3563e01f1f31f75b8b60090c68e9461c0e370fd7ca0ab6b61b15b",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "9c0044ba-69c7-578a-91db-1f177fd1bd49",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.2722206115723
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "9e367447-4385-54ef-9f84-e46baa1ee682",
+    "condition": "B",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "0b22f9b3dc9647b5275eb0b805c0710489f08e435b415059b20fee64a9b6580f",
+    "coin_sha256_before": "66666185051eba29d9b1f9617872066095e219894df819926d8fe0dc3a6b7489",
+    "exit_code": 0,
+    "player_sha256_after": "0b22f9b3dc9647b5275eb0b805c0710489f08e435b415059b20fee64a9b6580f",
+    "coin_sha256_after": "66666185051eba29d9b1f9617872066095e219894df819926d8fe0dc3a6b7489",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "9e367447-4385-54ef-9f84-e46baa1ee682",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "9f787425-7529-5d6c-b377-6b82ed4613ab",
+    "condition": "A",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "e1fe321ace9951f170177076eb98bd0ddf767475d93a991020527a984fd14e3d",
+    "coin_sha256_before": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "exit_code": 0,
+    "player_sha256_after": "e1fe321ace9951f170177076eb98bd0ddf767475d93a991020527a984fd14e3d",
+    "coin_sha256_after": "a6a36e85f8c9a04ef41e2a876dd55dd9fc8086e35d50c2455f5fc18263dea080",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "9f787425-7529-5d6c-b377-6b82ed4613ab",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.2722206115723
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            256.666473388672,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.000061035156,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  },
+  {
+    "run_id": "d3236b80-36d7-5df0-ac29-c51ba34cb336",
+    "condition": "B",
+    "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+    "kind": "actual-running-engine-screenshot",
+    "harness": "scripts/h06_visual_proj (auxiliary)",
+    "player_sha256_before": "0b22f9b3dc9647b5275eb0b805c0710489f08e435b415059b20fee64a9b6580f",
+    "coin_sha256_before": "d4b86a0769784e9c6ab60d76ef6a47dcc69c73da4b45fe02b520576d6d921e84",
+    "exit_code": 0,
+    "player_sha256_after": "0b22f9b3dc9647b5275eb0b805c0710489f08e435b415059b20fee64a9b6580f",
+    "coin_sha256_after": "d4b86a0769784e9c6ab60d76ef6a47dcc69c73da4b45fe02b520576d6d921e84",
+    "unmodified": true,
+    "screenshots": [
+      "01_initial.png",
+      "02_grounded.png",
+      "03_jump.png",
+      "04_approach.png",
+      "05_collected.png"
+    ],
+    "screenshot_count": 5,
+    "engine_state": {
+      "coin_removed": true,
+      "collected": true,
+      "run_id": "d3236b80-36d7-5df0-ac29-c51ba34cb336",
+      "shots": [
+        {
+          "caption": "Initial scene: player (blue) spawned above ground, coin (gold) to the right",
+          "coin_present": true,
+          "collected": false,
+          "file": "01_initial.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            40.0
+          ]
+        },
+        {
+          "caption": "Player at rest on the ground (is_on_floor)",
+          "coin_present": true,
+          "collected": false,
+          "file": "02_grounded.png",
+          "player_on_floor": true,
+          "player_pos": [
+            120.0,
+            179.990295410156
+          ]
+        },
+        {
+          "caption": "Player airborne during a jump",
+          "coin_present": true,
+          "collected": false,
+          "file": "03_jump.png",
+          "player_on_floor": false,
+          "player_pos": [
+            120.0,
+            138.975112915039
+          ]
+        },
+        {
+          "caption": "Player moving right, approaching the coin",
+          "coin_present": true,
+          "collected": false,
+          "file": "04_approach.png",
+          "player_on_floor": true,
+          "player_pos": [
+            260.0,
+            179.998901367188
+          ]
+        },
+        {
+          "caption": "After overlap: 'collected' fired=true, coin removed=true",
+          "coin_present": false,
+          "collected": true,
+          "file": "05_collected.png",
+          "player_on_floor": true,
+          "player_pos": [
+            340.0,
+            179.998901367188
+          ]
+        }
+      ]
+    },
+    "status": "ok"
+  }
+]

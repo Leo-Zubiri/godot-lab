@@ -1,0 +1,18 @@
+{
+  "run_id": "3d270d38-47da-55c6-a4d9-501c24115476",
+  "condition": "A",
+  "trial": 2,
+  "order_index": 12,
+  "gen_model_id": "claude-sonnet-5-5",
+  "effort": "high",
+  "web_access": "off",
+  "isolation": "bwrap-ro-bind",
+  "sandbox": "scripts/h06_sandbox.sh",
+  "knowledge_mount": null,
+  "in_sandbox_knowledge_path": null,
+  "knowledge_host_path": null,
+  "knowledge_pin": null,
+  "max_budget_usd": 5.0,
+  "timeout_s": 600,
+  "preserve_attempt": true
+}

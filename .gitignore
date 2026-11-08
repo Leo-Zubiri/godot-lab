@@ -46,3 +46,7 @@ runs/exp-h06-platformer-pickup/provenance/
 # Python caches
 __pycache__/
 *.pyc
+
+# h06 visual verification: transient candidate copies + godot cache (harness source IS tracked)
+scripts/h06_visual_proj/under_test/
+scripts/h06_visual_proj/.godot/

@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-012",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 2,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 2,
+    "requirement_fulfillment": 2,
+    "source_quality": 1,
+    "provenance": 0,
+    "hallucinations": 3,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Logic is sound, but the coin filters on the 'player' group, which nothing assigns.",
+    "api_correctness": "get_axis, move_and_slide, body_entered.connect, emit and move_toward are all valid.",
+    "version_compatibility": "Uses Godot 4 idioms: velocity property, Callable connect, Signal.emit, @export.",
+    "architectural_quality": "Signal-based coin is decoupled, but its group dependency is implicit and undocumented.",
+    "requirement_fulfillment": "Covers movement, jump, gravity and single pickup, but the player group setup is missing.",
+    "source_quality": "Has reasoned technical explanations but cites no docs or sources.",
+    "provenance": "No references or citations, so the claims cannot be traced.",
+    "hallucinations": "No invented APIs or behaviors found.",
+    "clarity": "Explanation is clear, organized and actionable for each script."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.0994034
+}

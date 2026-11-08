@@ -1,0 +1,30 @@
+{
+  "run_id": "33987f47-beac-5670-8aed-dda64dbd6754",
+  "references_raw": "/knowledge/notes/characterbody2d-movement.md\n/knowledge/notes/area2d-detection.md\n/knowledge/notes/input-handling.md",
+  "references_empty": false,
+  "cited_count": 3,
+  "cited": [
+    {
+      "ref": "/knowledge/notes/characterbody2d-movement.md",
+      "exists": true,
+      "path": "notes/characterbody2d-movement.md"
+    },
+    {
+      "ref": "/knowledge/notes/area2d-detection.md",
+      "exists": true,
+      "path": "notes/area2d-detection.md"
+    },
+    {
+      "ref": "/knowledge/notes/input-handling.md",
+      "exists": true,
+      "path": "notes/input-handling.md"
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores"
+}

@@ -1,0 +1,30 @@
+{
+  "blind_id": "q-003",
+  "evaluator_model_requested": "claude-opus-5-5",
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "scores": {
+    "technical_correctness": 3,
+    "api_correctness": 3,
+    "version_compatibility": 3,
+    "architectural_quality": 3,
+    "requirement_fulfillment": 3,
+    "source_quality": 1,
+    "provenance": 1,
+    "hallucinations": 2,
+    "clarity": 3
+  },
+  "justifications": {
+    "technical_correctness": "Movement, grounded jump, one-shot guarded pickup with deferred monitoring are all correct.",
+    "api_correctness": "get_gravity, get_axis, move_and_slide, set_deferred, body_entered all used validly.",
+    "version_compatibility": "Godot 4.x idioms; get_gravity (4.3+) appropriate for 4.7.2.",
+    "architectural_quality": "Clean separation; coin emits signal, group filter, idempotent guard.",
+    "requirement_fulfillment": "Platformer movement and exactly-once coin pickup fully implemented.",
+    "source_quality": "No sources cited; only internal reasoning as support.",
+    "provenance": "States knowledge dir empty; claims not traceable to external evidence.",
+    "hallucinations": "Quoted error text inaccurate; real message is 'Function blocked during in/out signal'.",
+    "clarity": "Explanation is clear, structured, and maps directly to code."
+  },
+  "parse_ok": true,
+  "is_error": false,
+  "cost_usd": 0.1017994
+}

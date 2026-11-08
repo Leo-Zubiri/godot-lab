@@ -1,0 +1,20 @@
+{
+  "run_id": "0bd36f68-7924-5975-bc4c-dca1d87e2df2",
+  "condition": "A_prime",
+  "trial": 5,
+  "order_index": 11,
+  "status": "ok",
+  "return_code": 0,
+  "resolved_model": "claude-sonnet-5-5",
+  "requested_model": "claude-sonnet-5-5",
+  "effort": "high",
+  "is_error": false,
+  "subtype": "success",
+  "cost_usd": 0.045682200000000006,
+  "duration_ms": 10207,
+  "num_turns": 2,
+  "malformed_contract": false,
+  "knowledge_reads": [],
+  "knowledge_read_count": 0,
+  "all_file_reads": []
+}

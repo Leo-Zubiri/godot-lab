@@ -1,0 +1,50 @@
+{
+  "run_id": "3d270d38-47da-55c6-a4d9-501c24115476",
+  "references_raw": "- Godot docs: CharacterBody2D (`move_and_slide`, `is_on_floor`, `velocity`)\n- Godot docs: Area2D (`body_entered` signal)\n- Godot docs: Using CharacterBody2D/move_and_slide (platformer movement example)\n- Godot docs: Node (`is_in_group`, `queue_free`)",
+  "references_empty": false,
+  "cited_count": 4,
+  "cited": [
+    {
+      "ref": "Godot docs: CharacterBody2D (`move_and_slide`, `is_on_floor`, `velocity`)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot docs: Area2D (`body_entered` signal)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot docs: Using CharacterBody2D/move_and_slide (platformer movement example)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot docs: Node (`is_in_group`, `queue_free`)",
+      "exists": false,
+      "path": null
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores",
+  "provenance_scores": {
+    "existence": 0,
+    "relevance": 3,
+    "claim_source_correspondence": 1,
+    "attribution_correctness": 1
+  },
+  "provenance_justifications": {
+    "existence": "None of the four cited entries were found in the knowledge base.",
+    "relevance": "Docs on CharacterBody2D, Area2D and Node match the task's APIs.",
+    "claim_source_correspondence": "No source content to check; claims match general Godot 4 behavior.",
+    "attribution_correctness": "Cites external Godot docs, not KB entries, so attribution can't be verified."
+  },
+  "parse_ok": true,
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "cost_usd": 0.07437540000000001
+}

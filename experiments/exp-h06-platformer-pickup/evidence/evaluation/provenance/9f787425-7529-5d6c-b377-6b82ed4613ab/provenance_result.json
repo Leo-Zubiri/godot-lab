@@ -1,0 +1,50 @@
+{
+  "run_id": "9f787425-7529-5d6c-b377-6b82ed4613ab",
+  "references_raw": "- Godot 4 docs: CharacterBody2D (`move_and_slide`, `is_on_floor`, `velocity`)\n- Godot 4 docs: Area2D (`body_entered` signal)\n- Godot 4 docs: Input (`get_axis`, `is_action_just_pressed`)\n- Godot 4 docs: Node (`queue_free`, `is_in_group`)",
+  "references_empty": false,
+  "cited_count": 4,
+  "cited": [
+    {
+      "ref": "Godot 4 docs: CharacterBody2D (`move_and_slide`, `is_on_floor`, `velocity`)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot 4 docs: Area2D (`body_entered` signal)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot 4 docs: Input (`get_axis`, `is_action_just_pressed`)",
+      "exists": false,
+      "path": null
+    },
+    {
+      "ref": "Godot 4 docs: Node (`queue_free`, `is_in_group`)",
+      "exists": false,
+      "path": null
+    }
+  ],
+  "dimensions": [
+    "existence",
+    "relevance",
+    "claim_source_correspondence",
+    "attribution_correctness"
+  ],
+  "note": "separate from blind quality; scores NEVER combined with quality scores",
+  "provenance_scores": {
+    "existence": 1,
+    "relevance": 3,
+    "claim_source_correspondence": 1,
+    "attribution_correctness": 2
+  },
+  "provenance_justifications": {
+    "existence": "None of the cited entries are in the KB; they are external Godot docs.",
+    "relevance": "All four cited APIs are used directly in the task's solution code.",
+    "claim_source_correspondence": "No source content to check; claims match standard docs but are unconfirmed.",
+    "attribution_correctness": "Each API is credited to the right Godot class, but the sources are external."
+  },
+  "parse_ok": true,
+  "evaluator_model_resolved": "claude-opus-5-5",
+  "cost_usd": 0.07359940000000001
+}

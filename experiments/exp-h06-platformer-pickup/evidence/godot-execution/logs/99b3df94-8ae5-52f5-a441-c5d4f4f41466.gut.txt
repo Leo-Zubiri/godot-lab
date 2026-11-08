@@ -1,0 +1,51 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+---  GUT  ---
+[1m[INFO]:  [0musing [/home/zub/.local/share/godot/app_userdata/h06-platformer-pickup-fixture] for temporary output.
+Godot version:  4.7.2
+GUT version:  9.6.1
+[4m
+
+res://test/test_h06.gd
+[0m* test_player_script_valid
+* test_gravity_pulls_down_in_air
+* test_lands_on_floor
+* test_horizontal_movement
+[31m    [Failed]:  [0m[200.00000000000000000000] expected to equal [300.0] +/- [1.0]:  velocity.x should equal SPEED while moving right
+      at line 107
+* test_jump_from_floor
+* test_coin_collected_exactly_once
+[1m5/6 passed.
+[0m[4m
+
+res://test/test_harness_sanity.gd
+[0m* test_sanity_matching_mask_detects
+* test_sanity_nonmatching_mask_ignores
+[1m2/2 passed.
+[0m
+
+
+
+[33m==============================================
+[0m[33m= Run Summary
+[0m[33m==============================================
+[0m[4m
+res://test/test_h06.gd
+[0m- test_horizontal_movement
+[31m    [Failed]:  [0m[200.00000000000000000000] expected to equal [300.0] +/- [1.0]:  velocity.x should equal SPEED while moving right
+          at line 107
+
+Totals
+------
+Scripts               2
+Tests                 8
+Passing Tests         7
+Failing Tests         1
+Asserts           15/16
+Time              1.993s
+
+
+[31m---- 1 failing tests ----
+[0mGUT 9.7.1:  https://github.com/bitwes/Gut/releases/tag/v9.7.1 is now available!
+
+Results saved to res://test_report.xml
