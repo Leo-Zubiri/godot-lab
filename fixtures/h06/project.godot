@@ -1,0 +1,10 @@
+; h06 experiment fixture — Godot 4.7. Minimal: GUT + scripts-under-test + tests.
+; Input actions are added at runtime by the test harness (deterministic), not stored here.
+config_version=5
+
+[application]
+config/name="h06-platformer-pickup-fixture"
+config/features=PackedStringArray("4.7")
+
+[editor_plugins]
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")

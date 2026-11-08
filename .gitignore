@@ -29,3 +29,11 @@ runs/**/raw/
 *~
 .idea/
 .vscode/
+
+# h06 generated artifacts
+fixtures/h06/test_report.xml
+fixtures/**/.godot/
+# Vendored test framework (fetch per fixtures/h06/README.md — pinned, not committed to keep diffs reviewable)
+fixtures/**/addons/gut/
+# runtime-swapped candidate scripts during the matrix (reference under_test/ IS committed)
+fixtures/h06/under_test/_candidate_*.gd

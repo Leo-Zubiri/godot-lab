@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="GutTests" failures="0" tests="6" >
+  <testsuite name="test/test_h06.gd" tests="6" failures="0" skipped="0" time="1.355203" >
+      <testcase name="test_gravity_pulls_down_in_air" assertions="3" status="pass" classname="test/test_h06.gd" time="0.196334" >
+      </testcase>
+      <testcase name="test_lands_on_floor" assertions="2" status="pass" classname="test/test_h06.gd" time="0.551864" >
+      </testcase>
+      <testcase name="test_horizontal_movement" assertions="2" status="pass" classname="test/test_h06.gd" time="0.17941" >
+      </testcase>
+      <testcase name="test_jump_from_floor" assertions="3" status="pass" classname="test/test_h06.gd" time="0.130998" >
+      </testcase>
+      <testcase name="test_coin_requires_matching_mask" assertions="2" status="pass" classname="test/test_h06.gd" time="0.103525" >
+      </testcase>
+      <testcase name="test_coin_collected_exactly_once" assertions="3" status="pass" classname="test/test_h06.gd" time="0.193072" >
+      </testcase>
+  </testsuite>
+</testsuites>

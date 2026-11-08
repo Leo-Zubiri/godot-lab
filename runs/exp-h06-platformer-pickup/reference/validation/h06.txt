@@ -1,0 +1,7 @@
+verdict: PASS
+tests: 6
+failures: 0
+skipped: 0
+crash: 0
+script_errors: 0
+godot_rc: 0
