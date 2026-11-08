@@ -115,5 +115,51 @@ try:
 except L.LeakageError:
     check("code-comment leak also blocks payload construction", True)
 
+print("== GUT / practical_validity separation (authorized rubric correction) ==")
+# practical_validity is produced OBJECTIVELY by failure_scoring (GUT/parse), independent of the blind evaluator
+pv = L.failure_scoring("ok", "PASS")["practical_validity"]
+check("practical_validity comes from the objective GUT verdict (ok+PASS -> 3)", pv == 3)
+# build_evaluator_payload takes NO validation/GUT argument -> it is structurally impossible to pass GUT in
+import inspect as _inspect
+sig = set(_inspect.signature(L.build_evaluator_payload).parameters)
+check("payload builder accepts no GUT/validation parameter", sig == {"blind_id", "parsed", "rubric_text"})
+# even with a real PASS verdict on the run, nothing run-specific is injected: rubric stays byte-identical and the
+# submission carries no verdict value (dimension NAMES in the fixed rubric are fine; a RESULT value is not)
+payload2 = L.build_evaluator_payload("q-010", parsed_ok, RUBRIC)
+ser2 = L.serialize_evaluator_payload(payload2)
+import json as _json2
+rp2 = _json2.loads(ser2)
+check("payload.rubric is byte-identical to the fixed rubric (no run verdict injected)", rp2["rubric"] == RUBRIC)
+check("payload.submission carries no GUT verdict value", not any(t in rp2["submission"] for t in ["PASS", "FAIL", "INVALID", "validation_verdict"]))
+
+print("== candidate file extraction (for objective GUT validation) ==")
+scr = ("### script\n"
+       "```gdscript\nextends CharacterBody2D\nfunc _physics_process(d): move_and_slide()\n```\n"
+       "```gdscript\nextends Area2D\nsignal collected\n```\n"
+       "### explanation\nx\n### references\nnone\n")
+files = L.extract_gdscript_files(L.parse_structured_output(scr)["script"])
+check("extracts player.gd from CharacterBody2D block", "player.gd" in files and "CharacterBody2D" in files["player.gd"])
+check("extracts coin.gd from Area2D block", "coin.gd" in files and "Area2D" in files["coin.gd"])
+scr2 = "### script\n```gdscript\n# coin.gd\nextends Node\n```\n```gdscript\n# player.gd\nextends Node\n```\n### explanation\nx\n"
+files2 = L.extract_gdscript_files(L.parse_structured_output(scr2)["script"])
+check("filename comment classifies blocks", files2.get("coin.gd","").find("# coin.gd")>=0 and files2.get("player.gd","").find("# player.gd")>=0)
+
+print("== stream-json parsing + mediator ==")
+stream = ('{"type":"system","subtype":"init","model":"claude-sonnet-5-5"}\n'
+          '{"type":"assistant","message":{"content":[{"type":"tool_use","name":"Read","input":{"file_path":"/knowledge/notes/a.md"}}]}}\n'
+          '{"type":"assistant","message":{"content":[{"type":"tool_use","name":"Read","input":{"file_path":"/tmp/x"}}]}}\n'
+          '{"type":"result","result":"### script\\n...","is_error":false,"subtype":"success","total_cost_usd":0.1,"duration_ms":1234,"num_turns":3}\n')
+ps = L.parse_stream_jsonl(stream)
+check("parses resolved model", ps["resolved_model"] == "claude-sonnet-5-5")
+check("parses result/cost/turns", ps["cost_usd"] == 0.1 and ps["num_turns"] == 3 and ps["is_error"] is False)
+check("mediator captures ONLY knowledge reads", ps["knowledge_reads"] == ["/knowledge/notes/a.md"])
+
+print("== evaluator JSON parsing ==")
+ej = L.parse_eval_json('here:\n```json\n{"blind_id":"q-1","scores":{"clarity":3}}\n```\n')
+check("parses fenced evaluator JSON", ej["parse_ok"] and ej["scores"]["clarity"] == 3)
+ej2 = L.parse_eval_json('{"scores":{"clarity":2}} trailing')
+check("parses bare-object evaluator JSON", ej2["parse_ok"] and ej2["scores"]["clarity"] == 2)
+check("flags unparseable evaluator output", L.parse_eval_json("no json here")["parse_ok"] is False)
+
 print(f"\nTOT: {P} passed, {F} failed")
 sys.exit(1 if F else 0)

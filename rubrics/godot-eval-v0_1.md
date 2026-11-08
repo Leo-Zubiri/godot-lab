@@ -39,8 +39,11 @@ Anchors (0 = absent/wrong · 1 = major gaps · 2 = minor issues · 3 = fully cor
 | **clarity** | unintelligible | hard to follow | mostly clear | clear and actionable |
 
 ## Scoring rules
-- **`practical_validity` is anchored to the task's executable validation** (parse/GUT), not to the evaluator's opinion;
-  the evaluator is given the validation result as an input fact.
+- **`practical_validity` is measured OBJECTIVELY by the GUT/parse harness, OUTSIDE the blind quality evaluator, and is
+  stored separately.** The blind quality evaluator is **NOT** given the GUT/validation result (feeding it back would
+  leak signal and risk condition identification); the evaluator scores the other dimensions from the submission alone.
+  Aggregation may merge the objective `practical_validity` with the blind dimensions for analysis, but the two are kept
+  as **separate scores** and the GUT result is **never** fed back into the blind quality evaluator.
 - **`architectural_quality` is a human/rubric judgment** and must **not** be inferred from a passing test.
 - Evaluator: a **different** model from the generator (pinned id, recorded). Blind to condition (randomized output IDs,
   shuffled order). Provide **a one-line justification per dimension**.

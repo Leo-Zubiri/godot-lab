@@ -7,9 +7,14 @@ trials_per_condition: 5               # EXPLORATORY; N=5 cannot establish statis
 generation:
   gen_model_id: claude-sonnet-5-5     # authorized generator; exact resolved version recorded per run (system/init)
   effort: high
-  web_access: off
+  web_access: off                     # enforced via --disallowedTools WebSearch WebFetch
+  allowed_tools: [Read, Glob, Grep]   # identical for A/A'/B; lets B read /knowledge; no write/web/bash
   randomize_order: true
-  session: "fresh per run (claude -p, unique --session-id, no resume; auto-memory & CLAUDE.md disabled)"
+  session: "fresh per run (claude -p, unique ephemeral HOME, no resume; auto-memory & CLAUDE.md disabled)"
+  isolation: bwrap-ro-bind            # scripts/h06_sandbox.sh; knowledge mounted read-only at /knowledge (B/A'), absent (A)
+  in_sandbox_knowledge_path: /knowledge   # identical for A' and B (not a condition tell); A has none
+  max_budget_usd_per_run: 5.0         # frozen safety cap (per run); recorded actuals per run
+  timeout_s_per_run: 600              # frozen per-run wall-clock cap
   preserve_every_attempt: true        # malformed/timeout/parse-fail/test-fail all kept; never drop or silently retry
 output_contract: conditions/output-contract-v2.md
 task: tasks/holdout/h06-platformer-pickup.md
@@ -23,9 +28,14 @@ knowledge:
 evaluation:
   blind_quality:
     evaluator_model_id: claude-opus-5-5      # different model, SAME provider (Anthropic) -> not provider-independent
-    inputs: [normalized_script, normalized_explanation, random_blind_id, identical_rubric]
-    excludes: [references, condition_label, file_paths, note_ids, generation_metadata, original_run_ids, execution_order]
+    inputs: [normalized_script, normalized_explanation, random_blind_id, identical_rubric]   # payload = {blind_id, rubric, submission}
+    excludes: [references, condition_label, file_paths, note_ids, generation_metadata, original_run_ids,
+               execution_order, gut_results, validation_results, evaluator_model_id]
     randomize_order: true            # independent of generation order
+  practical_validity:
+    source: gut_parse_harness        # measured OBJECTIVELY, OUTSIDE the blind quality evaluator
+    stored_separately: true          # kept as a separate score; merged only in aggregation for analysis
+    never_fed_back_to_blind_evaluator: true
   provenance:
     separate_runner: true
     separate_records: true
@@ -37,4 +47,4 @@ records:
   mapping_outside_evaluator_inputs: true
   never_overwrite: [pilot_v1_results, pilot_v2_reeval_results]
 
-execution_authorized: false          # the 15-generation matrix is NOT authorized to run yet
+execution_authorized: true           # AUTHORIZED 2026-11-08 by the maintainer for this single 15-run matrix (A/A'/B x N=5)

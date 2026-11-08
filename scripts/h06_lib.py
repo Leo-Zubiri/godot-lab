@@ -134,3 +134,91 @@ def serialize_evaluator_payload(payload: dict) -> str:
         raise ValueError("evaluator payload fields must be EXACTLY %s; got %s"
                          % (sorted(EVALUATOR_PAYLOAD_FIELDS), sorted(payload)))
     return json.dumps(payload, sort_keys=True, ensure_ascii=False, indent=2)
+
+# --- extract the deliverable gdscript files from the ### script section (for executable validation) ---
+def extract_gdscript_files(script_text: str) -> dict:
+    """Map the candidate's code blocks to {'player.gd', 'coin.gd'} using, in order: a filename comment in the block,
+    the base type (CharacterBody2D->player, Area2D->coin), else block order (prompt asks player first, coin second).
+    Returns {filename: code}; a file may be missing if it can't be identified."""
+    blocks = re.findall(r"```(?:gdscript|gd|gdscript3)?\s*\n(.*?)```", script_text, re.S | re.I)
+    if not blocks:
+        # fall back: a fenced block with no language tag
+        blocks = re.findall(r"```\s*\n(.*?)```", script_text, re.S)
+    out = {}
+    unclassified = []
+    for b in blocks:
+        code = b.rstrip() + "\n"
+        head = "\n".join(code.splitlines()[:6]).lower()
+        if "player.gd" in head:
+            out.setdefault("player.gd", code); continue
+        if "coin.gd" in head:
+            out.setdefault("coin.gd", code); continue
+        if "characterbody2d" in code.lower():
+            out.setdefault("player.gd", code); continue
+        if re.search(r"extends\s+Area2D", code):
+            out.setdefault("coin.gd", code); continue
+        unclassified.append(code)
+    # order fallback for anything still unassigned
+    for code in unclassified:
+        if "player.gd" not in out:
+            out["player.gd"] = code
+        elif "coin.gd" not in out:
+            out["coin.gd"] = code
+    return out
+
+# --- parse the evaluator's JSON verdict out of its (possibly fenced) result text ---
+def parse_eval_json(result_text: str) -> dict:
+    import json
+    t = (result_text or "").strip()
+    m = re.search(r"```(?:json)?\s*\n(.*?)```", t, re.S)
+    if m:
+        t = m.group(1).strip()
+    else:
+        a, b = t.find("{"), t.rfind("}")
+        if a != -1 and b != -1 and b > a:
+            t = t[a:b + 1]
+    try:
+        o = json.loads(t)
+        o["parse_ok"] = True
+        return o
+    except Exception as e:
+        return {"parse_ok": False, "error": str(e), "raw": (result_text or "")[:500]}
+
+# --- claude -p stream-json parsing (pure; used by the execution wrappers) ---
+def parse_stream_jsonl(text: str) -> dict:
+    """Extract the fields we preserve from a `claude -p --output-format stream-json` transcript:
+    resolved model, final result text, error/subtype, usage/cost/turns, and every tool_use (with the file paths
+    read — the knowledge-access MEDIATOR check for B/A')."""
+    import json
+    model = result_text = subtype = None
+    is_error = None; cost = dur = turns = None
+    tool_uses = []  # {name, path}
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            o = json.loads(line)
+        except Exception:
+            continue
+        t = o.get("type")
+        if t == "system" and o.get("subtype") == "init":
+            model = o.get("model")
+        elif t == "assistant":
+            for c in (o.get("message", {}).get("content") or []):
+                if isinstance(c, dict) and c.get("type") == "tool_use":
+                    inp = c.get("input") or {}
+                    path = inp.get("file_path") or inp.get("path") or inp.get("pattern") or inp.get("glob") or ""
+                    tool_uses.append({"name": c.get("name"), "path": path})
+        elif t == "result":
+            result_text = o.get("result")
+            is_error = o.get("is_error")
+            subtype = o.get("subtype")
+            cost = o.get("total_cost_usd")
+            dur = o.get("duration_ms")
+            turns = o.get("num_turns")
+    reads = sorted({tu["path"] for tu in tool_uses if tu["name"] in ("Read", "Glob", "Grep") and tu["path"]})
+    knowledge_reads = [p for p in reads if "/knowledge" in p]
+    return {"resolved_model": model, "result_text": result_text, "is_error": is_error, "subtype": subtype,
+            "cost_usd": cost, "duration_ms": dur, "num_turns": turns,
+            "tool_uses": tool_uses, "file_reads": reads, "knowledge_reads": knowledge_reads}

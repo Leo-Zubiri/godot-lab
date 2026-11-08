@@ -62,13 +62,47 @@ def main():
                   open(os.path.join(bd, "meta.json"), "w"), indent=2)
         built += 1
 
-    print(f"DRY-RUN blind-quality: built {built} evaluator payloads; eval_order (sample)={order[:5]}; "
+    print(f"blind-quality: built {built} evaluator payloads; eval_order (sample)={order[:5]}; "
           f"leakage_hits_total={leaks_total}; blocked={blocked}")
     if leaks_total:
         # fail CLOSED: a leak blocks submission before any evaluator API call is reachable
         print("!! LEAKAGE DETECTED — these submissions are blocked and will NOT be sent to the evaluator"); sys.exit(2)
-    if args.execute:
-        print("REFUSED: --execute gated; blind quality evaluation not authorized."); sys.exit(3)
+    if not args.execute:
+        print("DRY-RUN: payloads built + leakage-scanned; no evaluator call made.")
+        return
+    # --- EXECUTE blind quality scoring (opus-5-5), in the randomized eval order ---
+    import h06_exec
+    EVAL_MODEL = "claude-opus-5-5"
+    DIMS = ["technical_correctness", "api_correctness", "version_compatibility", "architectural_quality",
+            "requirement_fulfillment", "source_quality", "provenance", "hallucinations", "clarity"]
+    # practical_validity is OMITTED: it is measured objectively by the GUT harness, never by the blind evaluator.
+    INSTR = (
+        "You are a strict, blind code reviewer for a Godot 4.7.2 GDScript task. You are given a JSON object with a "
+        "`blind_id`, the scoring `rubric`, and a `submission` (### script + ### explanation only). Apply the rubric and "
+        "score ONLY correctness and requirement fulfillment — NOT verbosity, length, or style. Do NOT score "
+        "`practical_validity` (an external executable harness determines it); set it to null. `hallucinations` is "
+        "reverse-scored (3 = none). Output ONLY one JSON object, no prose, exactly:\n"
+        '{"blind_id":"<id>","scores":{%s},"justifications":{<same keys>:"<=15 words each"}}\n'
+        "Each score is an integer 0-3 or null (NA). Base every score solely on the submission.\n\n"
+        % ", ".join('"%s":<0-3|null>' % d for d in DIMS))
+    done = 0
+    for bid in order:                         # randomized evaluation order, independent of generation order
+        bd = os.path.join(args.out, bid)
+        pj = os.path.join(bd, "payload.json")
+        if not os.path.exists(pj):            # blocked/leaked submissions have no payload -> not sent
+            continue
+        payload_text = open(pj, encoding="utf-8").read()
+        prompt = INSTR + "\n" + payload_text
+        res = h06_exec.run_claude_print(prompt, EVAL_MODEL, timeout_s=300)
+        open(os.path.join(bd, "eval_stream.jsonl"), "w").write(res["raw_stream"])
+        scores = L.parse_eval_json(res["result_text"] or "")
+        rec = {"blind_id": bid, "evaluator_model_requested": EVAL_MODEL, "evaluator_model_resolved": res["resolved_model"],
+               "scores": scores.get("scores"), "justifications": scores.get("justifications"),
+               "parse_ok": scores.get("parse_ok"), "is_error": res["is_error"], "cost_usd": res["cost_usd"]}
+        json.dump(rec, open(os.path.join(bd, "scores.json"), "w"), indent=2)
+        done += 1
+        print(f"  scored {bid}: model={res['resolved_model']} parse_ok={scores.get('parse_ok')} cost={res['cost_usd']}", flush=True)
+    print(f"BLIND QUALITY COMPLETE: {done} submissions scored by {EVAL_MODEL} (practical_validity excluded by design).")
 
 if __name__ == "__main__":
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
