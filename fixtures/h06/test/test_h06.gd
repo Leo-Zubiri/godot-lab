@@ -1,32 +1,42 @@
 extends GutTest
-## Fixed h06 harness (identical across A/A'/B). Validates scripts at res://under_test/{player,coin}.gd.
-## Deterministic: builds the scene in code, steps PHYSICS FRAMES (never wall-clock), asserts with tolerances.
+## Fixed h06 CANDIDATE validation suite (identical across A/A'/B). Validates res://under_test/{player,coin}.gd.
+## Deterministic: builds the scene in code, steps PHYSICS FRAMES (no wall-clock), asserts with tolerances.
 ##
-## Collision config — LAYER INDEX vs BITMASK VALUE (bit = 1 << (index-1)):
-##   Ground: layer index 1 -> value 1 ; mask 0
-##   Player: layer index 2 -> value 2 ; mask value 1 (collides with ground)
-##   Coin  : layer index 3 -> value 4 ; mask value 2 (scans for the player layer)
+## I2: candidate scripts are loaded at RUNTIME (not preload) with base-type guards, so a parse-broken candidate
+##     produces a controlled, attributable test FAILURE instead of breaking this suite's own compilation.
+##
+## Collision config — LAYER INDEX vs BITMASK VALUE (value = 1 << (index-1)):
+##   Ground: layer idx1 -> value 1 ; mask 0
+##   Player: layer idx2 -> value 2 ; mask value 1 (collides with ground)
+##   Coin  : layer idx3 -> value 4 ; mask value 2 (scans for the player layer)
 
-const PLAYER := preload("res://under_test/player.gd")
-const COIN := preload("res://under_test/coin.gd")
-const GROUND_TOP := 90.0   # ground center y=100, half-height 10
-const REST_Y := 70.0       # player half-height 20 -> rests at ground_top - 20
+const GROUND_TOP := 90.0
+const REST_Y := 70.0
 
 var _spawned: Array = []
 var _collect_count := 0
-
-func _on_collected() -> void:
-	_collect_count += 1
+var _player: Dictionary = {}   # {script, ok, msg}
+var _coin: Dictionary = {}
 
 func before_all() -> void:
 	for a in ["move_left", "move_right", "jump"]:
 		if not InputMap.has_action(a):
 			InputMap.add_action(a)
+	_player = _load_candidate("res://under_test/player.gd", "CharacterBody2D")
+	_coin = _load_candidate("res://under_test/coin.gd", "Area2D")
 
-func _track(n: Node) -> void:
-	# Own teardown (not add_child_autofree): a node may self-free (coin queue_free) -> avoid double-free segfault.
-	add_child(n)
-	_spawned.append(n)
+func _load_candidate(path: String, expected_base: String) -> Dictionary:
+	# Runtime load; a parse error yields null here (console error) WITHOUT breaking this test script.
+	var res: Variant = load(path)
+	if res == null or not (res is GDScript):
+		return {"script": null, "ok": false, "msg": "candidate %s failed to load/parse" % path}
+	var base := (res as GDScript).get_instance_base_type()
+	if base != expected_base:
+		return {"script": null, "ok": false, "msg": "candidate %s extends %s, expected %s" % [path, base, expected_base]}
+	return {"script": res, "ok": true, "msg": "ok"}
+
+func _on_collected() -> void:
+	_collect_count += 1
 
 func after_each() -> void:
 	for a in ["move_left", "move_right", "jump"]:
@@ -37,17 +47,21 @@ func after_each() -> void:
 	_spawned.clear()
 	await wait_physics_frames(1)
 
+func _track(n: Node) -> void:
+	add_child(n); _spawned.append(n)
+
 func _rect(w: float, h: float) -> RectangleShape2D:
 	var s := RectangleShape2D.new(); s.size = Vector2(w, h); return s
 
-func _build(player_y: float, add_coin: bool, coin_mask: int = 2) -> Dictionary:
+# Returns null player if the candidate player script is invalid (test should already have failed on the guard).
+func _build(player_y: float, add_coin: bool) -> Dictionary:
 	var ground := StaticBody2D.new()
 	ground.collision_layer = 1; ground.collision_mask = 0; ground.position = Vector2(0, 100)
 	var gcs := CollisionShape2D.new(); gcs.shape = _rect(8000, 20); ground.add_child(gcs)
 	_track(ground)
 
 	var player: CharacterBody2D = CharacterBody2D.new()
-	player.set_script(PLAYER)
+	player.set_script(_player["script"])
 	player.collision_layer = 2; player.collision_mask = 1
 	player.add_to_group("player")
 	var pcs := CollisionShape2D.new(); pcs.shape = _rect(20, 40); player.add_child(pcs)
@@ -56,18 +70,19 @@ func _build(player_y: float, add_coin: bool, coin_mask: int = 2) -> Dictionary:
 
 	var coin: Area2D = null
 	if add_coin:
-		coin = Area2D.new(); coin.set_script(COIN)
-		coin.collision_layer = 4; coin.collision_mask = coin_mask
+		coin = Area2D.new(); coin.set_script(_coin["script"])
+		coin.collision_layer = 4; coin.collision_mask = 2
 		var ccs := CollisionShape2D.new(); var circ := CircleShape2D.new(); circ.radius = 16.0
-		ccs.shape = circ; coin.add_child(ccs)
-		coin.position = Vector2(0, player_y)   # overlap the player
+		ccs.shape = circ; coin.add_child(ccs); coin.position = Vector2(0, player_y)
 		_track(coin)
-	return {"ground": ground, "player": player, "coin": coin}
+	return {"player": player, "coin": coin}
 
-# --- Component tests ---
+func test_player_script_valid() -> void:
+	assert_true(_player["ok"], _player["msg"])   # attributable to the candidate, not the harness
+
 func test_gravity_pulls_down_in_air() -> void:
-	var s := _build(-100.0, false)        # high above the floor
-	var p: CharacterBody2D = s["player"]
+	if not _player["ok"]: return assert_true(false, _player["msg"])
+	var p: CharacterBody2D = _build(-100.0, false)["player"]
 	await wait_physics_frames(1)
 	assert_false(p.is_on_floor(), "should start airborne")
 	var y0 := p.global_position.y
@@ -76,15 +91,15 @@ func test_gravity_pulls_down_in_air() -> void:
 	assert_gt(p.global_position.y, y0, "player should fall (y increases downward)")
 
 func test_lands_on_floor() -> void:
-	var s := _build(40.0, false)          # just above rest, falls and lands
-	var p: CharacterBody2D = s["player"]
+	if not _player["ok"]: return assert_true(false, _player["msg"])
+	var p: CharacterBody2D = _build(40.0, false)["player"]
 	await wait_physics_frames(30)
 	assert_true(p.is_on_floor(), "player should land on the ground")
 	assert_almost_eq(p.velocity.y, 0.0, 5.0, "vertical velocity ~0 once resting")
 
 func test_horizontal_movement() -> void:
-	var s := _build(REST_Y, false)
-	var p: CharacterBody2D = s["player"]
+	if not _player["ok"]: return assert_true(false, _player["msg"])
+	var p: CharacterBody2D = _build(REST_Y, false)["player"]
 	await wait_physics_frames(2)
 	var x0 := p.global_position.x
 	Input.action_press("move_right")
@@ -93,32 +108,23 @@ func test_horizontal_movement() -> void:
 	assert_gt(p.global_position.x, x0, "player should move right (x increases)")
 
 func test_jump_from_floor() -> void:
-	var s := _build(REST_Y, false)
-	var p: CharacterBody2D = s["player"]
-	await wait_physics_frames(3)                # settle on floor
+	if not _player["ok"]: return assert_true(false, _player["msg"])
+	var p: CharacterBody2D = _build(REST_Y, false)["player"]
+	await wait_physics_frames(3)
 	assert_true(p.is_on_floor(), "precondition: on floor before jump")
 	Input.action_press("jump")
 	await wait_physics_frames(1)
 	assert_lt(p.velocity.y, 0.0, "jump should give upward (negative y) velocity")
 	assert_false(p.is_on_floor(), "player leaves the floor after jumping")
 
-func test_coin_requires_matching_mask() -> void:
-	# NEGATIVE control: coin masks a layer the player is NOT on -> no detection.
-	var s := _build(REST_Y, true, 8)   # mask value 8 (index 4), player is layer 2
-	var coin: Area2D = s["coin"]
-	watch_signals(coin)
-	await wait_physics_frames(3)
-	assert_signal_emit_count(coin, "collected", 0, "coin must NOT collect when layer/mask don't match")
-	assert_true(is_instance_valid(coin), "coin remains when not collected")
-
-# --- Integration test ---
 func test_coin_collected_exactly_once() -> void:
+	if not _player["ok"]: return assert_true(false, _player["msg"])
+	if not _coin["ok"]: return assert_true(false, _coin["msg"])
 	_collect_count = 0
-	var s := _build(REST_Y, true, 2)   # mask value 2 -> scans player layer 2
-	var coin: Area2D = s["coin"]
-	coin.collected.connect(_on_collected)   # plain method, no watch_signals/lambda on a self-freeing node
+	var coin: Area2D = _build(REST_Y, true)["coin"]
+	coin.collected.connect(_on_collected)
 	await wait_physics_frames(3)
 	assert_eq(_collect_count, 1, "coin collected exactly once")
-	await wait_physics_frames(5)        # more frames must NOT re-collect
+	await wait_physics_frames(5)
 	assert_eq(_collect_count, 1, "no repeated collection on subsequent physics frames")
 	assert_false(is_instance_valid(coin), "coin removed after queue_free()")

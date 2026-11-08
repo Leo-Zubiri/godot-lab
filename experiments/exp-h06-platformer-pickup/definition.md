@@ -9,8 +9,9 @@ task: ../../tasks/holdout/h06-platformer-pickup.md
 rubric: ../../rubrics/godot-eval-v0_1.md
 conditions: [A, A_prime, B]
 trials_per_condition: 5     # N=5 is EXPLORATORY — cannot establish statistical significance
-gen_model_id: claude-sonnet-5-5          # exact version recorded per run at matrix time; fixed across all conditions
-eval_model_id: claude-opus-5-5           # PROPOSED independent evaluator (!= generator); confirm before matrix
+gen_model_id: claude-sonnet-5-5          # exact resolved version recorded per run (system/init) at matrix time; fixed across all conditions
+eval_model_id: claude-opus-5-5           # APPROVED evaluator (!= generator)
+eval_provider_note: "generator (Sonnet) and evaluator (Opus) are BOTH Anthropic models; different models from the SAME provider do NOT establish provider-independent evaluation (shared lineage => possibly correlated biases)."
 knowledge_pin: "godot-knowledge@91250e6b2bd9e3966e7b22be94dea9bc2c263fae"   # branch knowledge/batch-01-2d-entity
 knowledge_status_note: "the 3 cited notes are PROPOSED (agent-authored), NOT verified"
 expected_to_help: mixed
