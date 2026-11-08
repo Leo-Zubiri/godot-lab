@@ -1,0 +1,11 @@
+{
+  "autoload-singletons": "[ref-01]",
+  "gdscript-signals": "[ref-02]",
+  "gdscript-static-typing": "[ref-03]",
+  "god-autoload": "[ref-04]",
+  "godot-index": "[ref-05]",
+  "godot-version-policy": "[ref-06]",
+  "node-lifecycle-callbacks": "[ref-07]",
+  "node-vs-resource-vs-autoload": "[ref-08]",
+  "one-shot-timer": "[ref-09]"
+}

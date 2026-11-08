@@ -12,6 +12,12 @@ claim_strength: pipeline-validation-only
 
 # Results — exp-h01-pilot (PIPELINE VALIDATION ONLY)
 
+> ⚠️ **Scoring below is CONTAMINATED and SUPERSEDED (condition-leakage audit, 2026-11-08).** The evaluator saw raw
+> outputs containing condition tells (process narration, note-ids, paths, `status: proposed`, A′'s "empty directory").
+> The blind re-evaluation on normalized artifacts is in **[`exp-h01-pilot-reeval.md`](exp-h01-pilot-reeval.md)**. The
+> pipeline-validation evidence (isolation, mediation, reproducible validation, reconstructable records) remains valid;
+> only the per-dimension **scores** are superseded. Original scores are preserved and marked `contaminated: true`.
+
 **This run makes NO performance-superiority or statistical claim.** It is a smoke test of the whole godot-lab pipeline
 on one easy holdout task (`h01-timer-oneshot`), 1 task × {A, A′, B} × N=3 = 9 generations (Haiku 5.5) + 9 blind
 evaluations (Sonnet 5.5).

@@ -1,0 +1,22 @@
+[
+  {
+    "rule": "abs_path",
+    "count": 1
+  },
+  {
+    "rule": "kb_phrase",
+    "count": 1
+  },
+  {
+    "rule": "agents_md",
+    "count": 1
+  },
+  {
+    "rule": "notes_dir",
+    "count": 1
+  },
+  {
+    "rule": "empty_ref",
+    "count": 1
+  }
+]

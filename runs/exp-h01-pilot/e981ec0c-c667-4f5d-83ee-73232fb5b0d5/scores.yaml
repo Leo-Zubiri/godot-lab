@@ -12,3 +12,8 @@ hallucinations: 3
 clarity: 3
 practical_validity: 3
 justification: "A one-shot Timer (one_shot=true, wait_time=1.0) is created and connected in _ready(), then added as a child and started. It fires _on_timeout() once after 1 second. Every API used is valid Godot 4, and the lifecycle explanation is accurate, including that the timer is freed with its parent."
+
+# --- marked by condition-leakage audit (2026-11-08); original scores preserved above, NOT overwritten ---
+contaminated: true
+contamination_reason: "evaluator saw raw output with condition tells (process narration, note-ids, paths, status, empty-dir)"
+superseded_by: scores_v2.yaml

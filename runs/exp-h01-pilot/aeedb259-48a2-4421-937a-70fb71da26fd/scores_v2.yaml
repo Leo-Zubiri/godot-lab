@@ -1,0 +1,16 @@
+blind_id: art-01
+condition: Aprime
+trial: 1
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+normalized_input: true
+contaminated: false
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "The script is correct. `get_tree().create_timer(1.0)` returns a SceneTreeTimer, and its `timeout` signal fires once after 1 second. Connecting with `CONNECT_ONE_SHOT` guarantees a single call, which is redundant but harmless. The typed `:=` and the `_on_timeout` signature are valid GDScript 4. The lifecycle claims check out: `process_always` defaults to true, so the timer keeps counting while the tree is paused. The SceneTreeTimer is reference-counted and released after it fires, so no reference needs to be kept. Minor nitpicks only: the callback body is a `pass` placeholder, and 'enters the scene tree' slightly simplifies when `_ready()` runs. The answer honestly says it was not run in Godot."

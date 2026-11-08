@@ -1,0 +1,16 @@
+blind_id: art-04
+condition: A
+trial: 3
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+normalized_input: true
+contaminated: false
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "The code is valid Godot 4 GDScript. `get_tree().create_timer(1.0)` returns a `SceneTreeTimer`, which is one-shot and emits `timeout` once. `timeout.connect(_on_timeout, CONNECT_ONE_SHOT)` is the correct 4.x signal syntax. `CONNECT_ONE_SHOT` is redundant but harmless, and the answer says it only guarantees the connection is removed. The lifecycle notes hold up. `_ready()` runs once after the node and its children are ready. The `SceneTree` holds the timer, not the node. It counts down in idle (process) time by default, and the timer is freed after it emits. Freeing the node auto-disconnects the signal, because the callable's target object is gone. The answer says it was not run, which is honest, and the script already passed the parse check. I found no invented APIs."

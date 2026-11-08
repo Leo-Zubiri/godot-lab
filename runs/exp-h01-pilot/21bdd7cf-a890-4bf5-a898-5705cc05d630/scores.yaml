@@ -12,3 +12,8 @@ hallucinations: 3
 clarity: 3
 practical_validity: 3
 justification: "get_tree().create_timer(1.0).timeout.connect(_on_timeout) is valid Godot 4 code. It is one-shot and runs from _ready(). The lifecycle claims check out: process_always defaults to true, so it ticks while paused. ignore_time_scale defaults to false, so it respects time_scale. The connection is dropped if the node is freed first. The only quibble is that 'frees itself' is loose wording for a RefCounted timer."
+
+# --- marked by condition-leakage audit (2026-11-08); original scores preserved above, NOT overwritten ---
+contaminated: true
+contamination_reason: "evaluator saw raw output with condition tells (process narration, note-ids, paths, status, empty-dir)"
+superseded_by: scores_v2.yaml

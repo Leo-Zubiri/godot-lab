@@ -12,3 +12,8 @@ hallucinations: 3
 clarity: 2
 practical_validity: 3
 justification: "Timer created in _ready with one_shot=true, wait_time=1.0, timeout connected to _on_timeout, added as a child, then started. This fires exactly once about 1s later, and the lifecycle explanation is accurate, including the note about freeing the node. All APIs are real and valid in Godot 4.x. Minor clarity issue: the answer cites note names and caveats that don't help explain the code."
+
+# --- marked by condition-leakage audit (2026-11-08); original scores preserved above, NOT overwritten ---
+contaminated: true
+contamination_reason: "evaluator saw raw output with condition tells (process narration, note-ids, paths, status, empty-dir)"
+superseded_by: scores_v2.yaml

@@ -1,0 +1,16 @@
+blind_id: art-03
+condition: B
+trial: 1
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+normalized_input: true
+contaminated: false
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 2
+practical_validity: 3
+justification: "The code is correct Godot 4 GDScript. It creates a Timer with one_shot = true and wait_time = 1.0, connects timeout to _on_timeout using the Callable form, adds the timer as a child, and starts it. This calls _on_timeout() exactly once, about 1 second after _ready. add_child before start() is correct, since start() requires the timer to be in the tree. The lifecycle explanation is accurate. It says _ready runs once after the children are in the tree, that the timer can fire a frame late, that one_shot stops it after one emission, and that freeing the node frees the child timer so the callback never runs. The [ref-xx] citations and the 'unverified' disclaimers are odd and clutter the answer, which costs some clarity. They don't introduce any invented APIs or behavior."

@@ -1,0 +1,54 @@
+[
+  {
+    "rule": "kb_phrase",
+    "count": 1
+  },
+  {
+    "rule": "kb_abbrev",
+    "count": 2
+  },
+  {
+    "rule": "agents_md",
+    "count": 1
+  },
+  {
+    "rule": "usable_ref",
+    "count": 1
+  },
+  {
+    "rule": "not_the_ref",
+    "count": 1
+  },
+  {
+    "rule": "tooling",
+    "count": 1
+  },
+  {
+    "rule": "i_read",
+    "count": 1
+  },
+  {
+    "rule": "status_colon",
+    "count": 1
+  },
+  {
+    "rule": "anon:gdscript-signals",
+    "count": 1
+  },
+  {
+    "rule": "anon:godot-version-policy",
+    "count": 1
+  },
+  {
+    "rule": "anon:node-lifecycle-callbacks",
+    "count": 1
+  },
+  {
+    "rule": "cleanup:dbl_the_cap",
+    "count": 1
+  },
+  {
+    "rule": "cleanup:lead_space",
+    "count": 1
+  }
+]

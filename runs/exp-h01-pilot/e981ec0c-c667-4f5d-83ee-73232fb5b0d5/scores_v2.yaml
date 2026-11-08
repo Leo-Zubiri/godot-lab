@@ -1,0 +1,16 @@
+blind_id: art-05
+condition: A
+trial: 1
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+normalized_input: true
+contaminated: false
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "The script creates a Timer, sets one_shot = true and wait_time = 1.0, connects timeout to _on_timeout, calls add_child, then calls start(). All of these are valid Godot 4 APIs. Because it is one-shot, _on_timeout() fires exactly once after about 1 second. Adding the child before start() is correct, since start() needs the timer to be inside the tree. The lifecycle explanation is accurate: _ready() runs once the node enters the tree, the timer is processed each frame, timeout is emitted on expiry, and the timer is freed with its parent node. The statement that timeout 'calls _on_timeout() on the main thread' is a simplification but is correct for the default process callback. The artifact states it did not run the code, which is honest, and the automated parse check passed. I found no invented APIs."

@@ -12,3 +12,8 @@ hallucinations: 3
 clarity: 3
 practical_validity: 3
 justification: "The script uses valid Godot 4 API. It creates a one_shot Timer with wait_time 1.0, connects timeout to _on_timeout with CONNECT_ONE_SHOT, calls add_child before start(), and so fires exactly once. The lifecycle notes (_ready once, per-frame ticking, timeout emission, freed with the parent) are accurate. The knowledge-base preamble and the 'not run' remark were disregarded."
+
+# --- marked by condition-leakage audit (2026-11-08); original scores preserved above, NOT overwritten ---
+contaminated: true
+contamination_reason: "evaluator saw raw output with condition tells (process narration, note-ids, paths, status, empty-dir)"
+superseded_by: scores_v2.yaml

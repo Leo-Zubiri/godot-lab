@@ -1,0 +1,54 @@
+[
+  {
+    "rule": "kb_phrase",
+    "count": 1
+  },
+  {
+    "rule": "has_guidance",
+    "count": 1
+  },
+  {
+    "rule": "tooling",
+    "count": 2
+  },
+  {
+    "rule": "anon:gdscript-signals",
+    "count": 1
+  },
+  {
+    "rule": "anon:node-lifecycle-callbacks",
+    "count": 1
+  },
+  {
+    "rule": "kb_abbrev",
+    "count": 2
+  },
+  {
+    "rule": "not_verified",
+    "count": 1
+  },
+  {
+    "rule": "status_word",
+    "count": 1
+  },
+  {
+    "rule": "anon:gdscript-signals",
+    "count": 1
+  },
+  {
+    "rule": "anon:gdscript-static-typing",
+    "count": 1
+  },
+  {
+    "rule": "anon:node-lifecycle-callbacks",
+    "count": 1
+  },
+  {
+    "rule": "cleanup:dbl_the",
+    "count": 1
+  },
+  {
+    "rule": "cleanup:the_so",
+    "count": 1
+  }
+]

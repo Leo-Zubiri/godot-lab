@@ -1,0 +1,16 @@
+blind_id: art-07
+condition: A
+trial: 2
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+normalized_input: true
+contaminated: false
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 3
+practical_validity: 3
+justification: "get_tree().create_timer(1.0).timeout.connect(_on_timeout) is valid Godot 4 GDScript. It creates a one-shot SceneTreeTimer that emits timeout once, so _on_timeout() runs exactly once after 1 second. The lifecycle claims check out. create_timer defaults to process_always=true, so the timer ticks while the tree is paused. It defaults to ignore_time_scale=false, so it respects Engine.time_scale. It emits during the idle process frame by default. The timer is a RefCounted object that the tree drops after it fires. If the node is freed first, the signal connection to its Callable is removed automatically and the callback never runs. The note that _ready() runs once after the children are ready is correct. No invented APIs. The answer is concise and honestly says it was not run."

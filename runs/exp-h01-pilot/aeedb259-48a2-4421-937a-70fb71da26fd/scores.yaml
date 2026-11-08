@@ -12,3 +12,8 @@ hallucinations: 3
 clarity: 3
 practical_validity: 3
 justification: "get_tree().create_timer(1.0) with timeout.connect(_on_timeout, CONNECT_ONE_SHOT) in _ready() is valid Godot 4 and fires once after 1s. The process_always=true default and the self-freeing SceneTreeTimer are both accurate. CONNECT_ONE_SHOT is redundant because the timer only emits once, and the 'Creation' label for _ready() is a little loose, but neither is an error."
+
+# --- marked by condition-leakage audit (2026-11-08); original scores preserved above, NOT overwritten ---
+contaminated: true
+contamination_reason: "evaluator saw raw output with condition tells (process narration, note-ids, paths, status, empty-dir)"
+superseded_by: scores_v2.yaml

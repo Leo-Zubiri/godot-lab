@@ -1,0 +1,16 @@
+blind_id: art-06
+condition: B
+trial: 2
+evaluator_model: claude-sonnet-5-5
+rubric_version: 0.1.0
+blind: true
+normalized_input: true
+contaminated: false
+technical_correctness: 3
+api_correctness: 3
+version_compatibility: 3
+requirement_fulfillment: 3
+hallucinations: 3
+clarity: 2
+practical_validity: 3
+justification: "`get_tree().create_timer(1.0).timeout.connect(_on_timeout, CONNECT_ONE_SHOT)` inside `_ready()` is valid Godot 4 GDScript. It calls `_on_timeout()` once after about 1 second, and the timer's `timeout` signal fires only once anyway. The lifecycle notes are accurate: `_ready` runs once after the node and its children enter the tree, and the SceneTree advances the timer each frame. The callback is deferred to a later frame, not run synchronously. Godot does drop signal connections when the receiving object is freed, so the early-free note is correct, though the answer hedges it as unverified. No invented APIs. The 'reference guide' and 'unverified notes' preamble is distracting and slightly lowers clarity."

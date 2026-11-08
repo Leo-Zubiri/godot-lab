@@ -20,6 +20,8 @@ fixtures/godot/scripts/*-run-*.gd
 runs/**/*.jsonl
 runs/**/*.err
 runs/**/eval_raw/
+runs/**/eval_v2_raw/
+runs/**/adversarial/*.json
 runs/**/raw/
 
 # --- OS / editor noise ---
