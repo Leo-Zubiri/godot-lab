@@ -37,3 +37,12 @@ fixtures/**/.godot/
 fixtures/**/addons/gut/
 # runtime-swapped candidate scripts during the matrix (reference under_test/ IS committed)
 fixtures/h06/under_test/_candidate_*.gd
+
+# h06 regenerable runner outputs (demo/dry-run)
+runs/exp-h06-platformer-pickup/dryrun/
+runs/exp-h06-platformer-pickup/blind_quality/
+runs/exp-h06-platformer-pickup/provenance/
+
+# Python caches
+__pycache__/
+*.pyc

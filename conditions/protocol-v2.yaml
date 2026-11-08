@@ -1,0 +1,42 @@
+# Frozen experiment protocol v2 (h06). Distinct from the pilot's v1. Do not mutate historical v1/v2 pilot results.
+protocol_version: "2.0"
+frozen: 2026-11-08
+
+conditions: [A, A_prime, B]           # A baseline (no knowledge), A' placebo (empty dir), B read-only knowledge
+trials_per_condition: 5               # EXPLORATORY; N=5 cannot establish statistical significance
+generation:
+  model_id: claude-haiku-5-5          # NOTE: decision authorized generator = Sonnet; set gen model at matrix time.
+  # ^ left as a placeholder marker; h06 definition.md pins gen=claude-sonnet-5-5 (resolved version recorded per run).
+  gen_model_id: claude-sonnet-5-5
+  effort: high
+  web_access: off
+  randomize_order: true
+  session: "fresh per run (claude -p, unique --session-id, no resume; auto-memory & CLAUDE.md disabled)"
+  preserve_every_attempt: true        # malformed/timeout/parse-fail/test-fail all kept; never drop or silently retry
+output_contract: conditions/output-contract-v2.md
+task: tasks/holdout/h06-platformer-pickup.md
+rubric: rubrics/godot-eval-v0_1.md
+
+knowledge:
+  pin: "godot-knowledge@91250e6b2bd9e3966e7b22be94dea9bc2c263fae"   # branch knowledge/batch-01-2d-entity
+  notes_status: proposed             # NOT verified
+  ro_checkout: /home/zub/Documents/GODOT/godot-knowledge-ro-h06
+
+evaluation:
+  blind_quality:
+    evaluator_model_id: claude-opus-5-5      # different model, SAME provider (Anthropic) -> not provider-independent
+    inputs: [normalized_script, normalized_explanation, random_blind_id, identical_rubric]
+    excludes: [references, condition_label, file_paths, note_ids, generation_metadata, original_run_ids, execution_order]
+    randomize_order: true            # independent of generation order
+  provenance:
+    separate_runner: true
+    separate_records: true
+    evaluates: [existence, relevance, claim_source_correspondence, attribution_correctness]
+    never_combined_with_quality: true
+
+records:
+  preserve: [original_structured_output, normalized_artifact, normalization_log, blind_map, raw_evaluator_response, parsed_scores, run_metadata]
+  mapping_outside_evaluator_inputs: true
+  never_overwrite: [pilot_v1_results, pilot_v2_reeval_results]
+
+execution_authorized: false          # the 15-generation matrix is NOT authorized to run yet
