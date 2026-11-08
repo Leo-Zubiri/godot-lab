@@ -33,7 +33,8 @@ def main():
         w = csv.writer(f); w.writerow(["blind_id", "run_id"])
         for rid, bid in sorted(blind.items(), key=lambda kv: kv[1]): w.writerow([bid, rid])
 
-    leaks_total = 0; built = 0
+    rubric_text = open(RUBRIC, encoding="utf-8").read()   # identical rubric for every submission
+    leaks_total = 0; built = 0; blocked = []
     import random
     order = sorted(blind.values()); random.Random("h06-eval-order").shuffle(order)  # eval order independent of gen order
     for rid, bid in blind.items():
@@ -41,18 +42,31 @@ def main():
         if raw is None:
             continue
         parsed = L.parse_structured_output(raw)
-        eval_input = L.build_blind_quality_input(parsed)     # script+explanation ONLY, normalized
-        hits = L.leakage_scan(eval_input)
-        leaks_total += len(hits)
         bd = os.path.join(args.out, bid); os.makedirs(bd, exist_ok=True)
-        open(os.path.join(bd, "eval_input.md"), "w").write(eval_input)
-        json.dump({"blind_id": bid, "leakage_hits": hits, "rubric": os.path.relpath(RUBRIC, ROOT),
-                   "evaluator_model_id": "claude-opus-5-5"}, open(os.path.join(bd, "meta.json"), "w"), indent=2)
+        try:
+            # build_evaluator_payload runs the leakage scan on the submission and RAISES before any API call
+            payload = L.build_evaluator_payload(bid, parsed, rubric_text)
+        except L.LeakageError as e:
+            hits = L.leakage_scan(L.build_blind_quality_input(parsed))
+            leaks_total += len(hits); blocked.append(bid)
+            # record the block locally; do NOT write a payload file (nothing is eligible to be sent)
+            json.dump({"blind_id": bid, "blocked": True, "leakage_hits": hits, "reason": str(e)},
+                      open(os.path.join(bd, "meta.json"), "w"), indent=2)
+            continue
+        # payload.json == EXACTLY what would be sent to the evaluator (blind_id + rubric + normalized submission)
+        open(os.path.join(bd, "payload.json"), "w").write(L.serialize_evaluator_payload(payload))
+        # meta.json == LOCAL record only, NEVER sent: evaluator model id, leakage result, rubric path, mapping stays elsewhere
+        json.dump({"blind_id": bid, "sent_to_evaluator": False, "leakage_hits": [],
+                   "rubric": os.path.relpath(RUBRIC, ROOT), "evaluator_model_id": "claude-opus-5-5",
+                   "note": "meta.json is a LOCAL record and is NEVER included in payload.json / sent to the evaluator"},
+                  open(os.path.join(bd, "meta.json"), "w"), indent=2)
         built += 1
 
-    print(f"DRY-RUN blind-quality: built {built} evaluator inputs; eval_order (sample)={order[:5]}; leakage_hits_total={leaks_total}")
+    print(f"DRY-RUN blind-quality: built {built} evaluator payloads; eval_order (sample)={order[:5]}; "
+          f"leakage_hits_total={leaks_total}; blocked={blocked}")
     if leaks_total:
-        print("!! LEAKAGE DETECTED in evaluator inputs — fix before any run"); sys.exit(2)
+        # fail CLOSED: a leak blocks submission before any evaluator API call is reachable
+        print("!! LEAKAGE DETECTED — these submissions are blocked and will NOT be sent to the evaluator"); sys.exit(2)
     if args.execute:
         print("REFUSED: --execute gated; blind quality evaluation not authorized."); sys.exit(3)
 

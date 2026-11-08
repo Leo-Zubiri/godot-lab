@@ -100,3 +100,37 @@ def leakage_scan(evaluator_input_text: str) -> list[str]:
         if re.search(pat, evaluator_input_text, re.I):
             hits.append(pat)
     return hits
+
+# --- evaluator payload: the EXACT object serialized and sent to the blind quality evaluator ---
+# The evaluator receives ONLY these fields. Anything else (evaluator model id, leakage results, GUT/validation
+# results, condition labels, paths, references, original run ids, execution order) is metadata and is FORBIDDEN here;
+# such metadata lives only in local record files (e.g. meta.json), which are NEVER sent to the evaluator.
+EVALUATOR_PAYLOAD_FIELDS = ("blind_id", "rubric", "submission")
+
+class LeakageError(Exception):
+    """Raised when a candidate submission contains condition-identifying content. Blocks the evaluator call."""
+
+def build_evaluator_payload(blind_id: str, parsed: dict, rubric_text: str) -> dict:
+    """Construct the EXACT payload for the blind quality evaluator.
+
+    Fields (and ONLY these): blind_id, rubric (identical for all), submission (normalized ### script + ### explanation;
+    references excluded, note-ids/paths anonymized). Runs the leakage scan on the SUBMISSION (never on the rubric, which
+    legitimately discusses conditions/dimensions) and RAISES LeakageError if the candidate leaks condition info — this
+    is a pure function with no I/O, so a leak is caught before any evaluator API call is ever made.
+    """
+    submission = build_blind_quality_input(parsed)     # normalized script+explanation ONLY
+    hits = leakage_scan(submission)
+    if hits:
+        raise LeakageError("submission leaks condition-identifying content: %r" % hits)
+    payload = {"blind_id": blind_id, "rubric": rubric_text, "submission": submission}
+    assert set(payload) == set(EVALUATOR_PAYLOAD_FIELDS), "payload must contain EXACTLY the whitelisted fields"
+    return payload
+
+def serialize_evaluator_payload(payload: dict) -> str:
+    """Deterministic JSON serialization of exactly what is sent. Refuses any payload whose key set is not the
+    whitelist, so an accidentally-added metadata field fails loudly instead of leaking to the evaluator."""
+    import json
+    if set(payload) != set(EVALUATOR_PAYLOAD_FIELDS):
+        raise ValueError("evaluator payload fields must be EXACTLY %s; got %s"
+                         % (sorted(EVALUATOR_PAYLOAD_FIELDS), sorted(payload)))
+    return json.dumps(payload, sort_keys=True, ensure_ascii=False, indent=2)

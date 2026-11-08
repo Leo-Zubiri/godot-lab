@@ -3,10 +3,13 @@
 it does NOT call any model. Actual generation is gated behind --execute AND protocol execution_authorized (currently
 false), so this script cannot start the 15-generation matrix.
 
-Isolation per condition (knowledge path only; label/path never leak to A/A'):
-  A       -> knowledge_path=None (no --add-dir, neutral cwd)
-  A_prime -> empty dir
-  B       -> read-only checkout at the pinned SHA
+Isolation per condition (knowledge path only; label/path never leak to A/A'). Delivered by scripts/h06_sandbox.sh
+(bubblewrap unprivileged user+mount namespace), which makes the knowledge the ONLY per-condition difference and mounts
+it read-only. --add-dir is NOT used for knowledge (it grants read+write; the hard boundary is the read-only bind):
+  A       -> /knowledge NOT mounted (absent; unreachable via parent dirs, symlinks, env, inherited mounts)
+  A_prime -> /knowledge = read-only bind of a verified-empty dir
+  B       -> /knowledge = read-only bind of the pinned-SHA checkout (cannot be modified)
+Fail-closed: if bwrap/unprivileged namespaces are unavailable, the sandbox exits 99 and runs nothing.
 Preserves every planned attempt; condition<->run mapping is written OUTSIDE evaluator inputs.
 """
 import argparse, csv, json, os, sys, uuid
@@ -57,8 +60,10 @@ def main():
         open(os.path.join(d, "prompt.txt"), "w").write(prompt)
         cfg = {"run_id": r["run_id"], "condition": r["condition"], "trial": r["trial"], "order_index": r["order_index"],
                "gen_model_id": GEN_MODEL, "effort": EFFORT, "web_access": "off",
-               "knowledge_path": kp, "knowledge_pin": "91250e6b2bd9e3966e7b22be94dea9bc2c263fae" if r["condition"] == "B" else None,
-               "add_dir": kp, "cwd": "neutral", "preserve_attempt": True}
+               "isolation": "bwrap-ro-bind", "sandbox": "scripts/h06_sandbox.sh",
+               "knowledge_mount": {"A": None, "A_prime": "/knowledge (ro, empty)", "B": "/knowledge (ro, pinned)"}[r["condition"]],
+               "knowledge_host_path": kp, "knowledge_pin": "91250e6b2bd9e3966e7b22be94dea9bc2c263fae" if r["condition"] == "B" else None,
+               "add_dir": None, "cwd": "neutral", "preserve_attempt": True}
         json.dump(cfg, open(os.path.join(d, "config.json"), "w"), indent=2)
 
     print(f"DRY-RUN: built {len(runs)} planned generations (A/A'/B x N={N}) + condition_map.csv at {args.out}")

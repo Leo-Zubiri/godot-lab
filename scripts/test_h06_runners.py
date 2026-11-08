@@ -69,5 +69,51 @@ check("malformed -> practical_validity 0", L.failure_scoring("malformed", "NA")[
 check("ok+PASS -> practical_validity 3", L.failure_scoring("ok", "PASS")["practical_validity"] == 3)
 check("ok+FAIL -> practical_validity 0, still counted", L.failure_scoring("ok", "FAIL")["practical_validity"] == 0 and L.failure_scoring("ok", "FAIL")["counts_in_pass_rate"])
 
+print("== evaluator PAYLOAD audit: exact serialized contents (Requirement 2) ==")
+RUBRIC = "# Godot rubric\nScore A / A' / B blind to condition. practical_validity anchored to GUT. Pinned model id recorded."
+parsed_ok = L.parse_structured_output(clean)
+payload = L.build_evaluator_payload("q-007", parsed_ok, RUBRIC)
+# 1) EXACTLY the whitelisted fields — nothing else
+check("payload keys are EXACTLY {blind_id, rubric, submission}", set(payload) == {"blind_id", "rubric", "submission"})
+check("payload.blind_id is the random blind id", payload["blind_id"] == "q-007")
+check("payload.rubric is the identical rubric text", payload["rubric"] == RUBRIC)
+check("payload.submission has script + explanation sections", "### script" in payload["submission"] and "### explanation" in payload["submission"])
+# 2) submission excludes references + is leak-free
+check("payload.submission excludes ### references + note-ids", "### references" not in payload["submission"] and "characterbody2d-movement" not in payload["submission"])
+check("payload.submission passes leakage scan", L.leakage_scan(payload["submission"]) == [])
+# 3) the EXACT serialized bytes contain no forbidden metadata sentinels
+ser = L.serialize_evaluator_payload(payload)
+import json as _json
+reparsed = _json.loads(ser)
+check("serialized payload deserializes to EXACTLY the 3 fields", set(reparsed) == {"blind_id", "rubric", "submission"})
+SENTINELS = ["claude-opus-5-5", "claude-sonnet-5-5", "/home/", "91250e6", "godot-knowledge-ro",
+             "A_prime", "condition_map", "order_index", "run_id", "trial", "gut_", "leakage_hits",
+             "evaluator_model_id", "validation_verdict"]
+present = [s for s in SENTINELS if s in ser]
+check(f"serialized payload contains NO metadata sentinels (found: {present})", present == [])
+# 4) a metadata field cannot be smuggled in — serializer refuses an off-whitelist key
+try:
+    L.serialize_evaluator_payload({**payload, "evaluator_model_id": "claude-opus-5-5"})
+    check("serializer REJECTS an extra metadata field", False)
+except ValueError:
+    check("serializer REJECTS an extra metadata field", True)
+try:
+    L.serialize_evaluator_payload({"blind_id": "q-1", "rubric": "r"})  # missing submission
+    check("serializer REJECTS a missing field", False)
+except ValueError:
+    check("serializer REJECTS a missing field", True)
+# 5) leakage in the candidate BLOCKS payload construction (pure function -> happens before any API call)
+try:
+    L.build_evaluator_payload("q-008", L.parse_structured_output(dirty), RUBRIC)
+    check("build_evaluator_payload RAISES on a leaking submission (blocks before API)", False)
+except L.LeakageError:
+    check("build_evaluator_payload RAISES on a leaking submission (blocks before API)", True)
+# 6) leak hidden in a code comment is also blocked
+try:
+    L.build_evaluator_payload("q-009", L.parse_structured_output(codetell), RUBRIC)
+    check("code-comment leak also blocks payload construction", False)
+except L.LeakageError:
+    check("code-comment leak also blocks payload construction", True)
+
 print(f"\nTOT: {P} passed, {F} failed")
 sys.exit(1 if F else 0)
